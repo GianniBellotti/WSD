@@ -30,16 +30,4 @@
         <password>123</password>
         <dob>3321-12-21</dob>
     </user>
-    <user>
-        <name>bob cake</name>
-        <email>bob@gmail.com</email>
-        <password>123</password>
-        <dob>1991-03-22</dob>
-    </user>
-    <user>
-        <name>test</name>
-        <email>test</email>
-        <password>test</password>
-        <dob>1990-06-25</dob>
-    </user>
 </users>
