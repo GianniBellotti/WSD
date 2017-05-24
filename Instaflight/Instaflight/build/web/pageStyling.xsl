@@ -18,25 +18,22 @@
                 </body>
             </html>
         </xsl:template>
-        <xsl:template match="navagation">
-             <%User user = (User)session.getAttribute("user");%>
-        <%
-            if (user == null){
-        %>
-        <table>
-            <tr><td><a href="login.jsp" >Login</a></td><td><a href="register.jsp">Register</a></td></tr>
-        </table>
-        <%}else if(user.getName().equals("Admin")){%>
+        <xsl:template match="visitor">
             <table>
-            <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
+            <tr><td><a href="login.jsp" >Login</a></td><td><a href="register.jsp">Register</a></td></tr>
+            </table>
+        </xsl:template>
+        <xsl:template match="admin">
+            <table>
+            <tr><td><i>Logged in as &lt;<xsl:value-of select="@name"/>&gt;</i></td>
                 <td><a href="logout.jsp">Logout</a></td><td><a href="admin.jsp">Manage Flight</a></td></tr>
             </table>
-        <%}else{%>
-        <table>
-            <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
+        </xsl:template>
+        <xsl:template match="customer">
+            <table>
+            <tr><td><i>Logged in as &lt;<xsl:value-of select="@name"/>&gt;</i></td>
             <td><a href="logout.jsp">Logout</a></td></tr>
-        </table>
-        <%}%>
+            </table>
         </xsl:template>
         <xsl:template match="result">
             <table>
@@ -69,10 +66,10 @@
                     <xsl:value-of select="@destination"/>
                 </td>
                 <td>
-                    <xsl:value-of select="departTime"/>
+                    <xsl:value-of select="@departTime"/>
                 </td>
                 <td>
-                    <xsl:value-of select="returnTime"/>
+                    <xsl:value-of select="@returnTime"/>
                 </td>
                 <td>
                     <xsl:value-of select="@price"/>
@@ -88,6 +85,7 @@
                 </td>
             </tr>
         </xsl:template>
+        <!--
         <xsl:template match="bookdetail">
             <table>
                 <tr>
@@ -99,5 +97,5 @@
                     </td>
                 </tr>
             </table>
-        </xsl:template>
+        </xsl:template>-->
 </xsl:stylesheet>
