@@ -29,10 +29,7 @@
                 <td><a href="logout.jsp">Logout</a></td><td><a href="admin.jsp">Manage Flight</a></td></tr>
             </table>
         <%}else{%>
-        <table>
-            <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
-            <td><a href="logout.jsp">Logout</a></td></tr>
-        </table>
+            <i>Logged in as &lt;<%=user.getName()%>&gt;</i> | <button type="button" onclick="<%session.invalidate();%> location.reload(); ">Logout</button>
         <%}%>
         <h1>Search</h1>
         <form action="result.jsp" method="POST">

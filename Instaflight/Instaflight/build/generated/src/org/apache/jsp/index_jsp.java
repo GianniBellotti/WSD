@@ -81,12 +81,11 @@ User user = (User)session.getAttribute("user");
       out.write("        ");
 }else{
       out.write("\n");
-      out.write("        <table>\n");
-      out.write("            <tr><td><i>Logged in as &lt;");
+      out.write("            <i>Logged in as &lt;");
       out.print(user.getName());
-      out.write("&gt;</i></td>\n");
-      out.write("            <td><a href=\"logout.jsp\">Logout</a></td></tr>\n");
-      out.write("        </table>\n");
+      out.write("&gt;</i> | <button type=\"button\" onclick=\"");
+session.invalidate();
+      out.write(" location.reload(); \">Logout</button>\n");
       out.write("        ");
 }
       out.write("\n");

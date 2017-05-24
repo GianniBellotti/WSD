@@ -19,14 +19,9 @@
         <%
             if (user == null){
         %>
-        <table>
-            <tr><td><a href="login.jsp" >Login</a></td><td><a href="register.jsp">Register</a></td></tr>
-        </table>
+            <a href="login.jsp" >Login</a> | <a href="register.jsp">Register</a>
         <%}else{%>
-        <table>
-            <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
-            <td><a href="logout.jsp">Logout</a></td></tr>
-        </table>
+            <i>Logged in as &lt;<%=user.getName()%>&gt;</i> | <button type="button" onclick="<%session.invalidate();%> location.reload(); ">Logout</button>
         <%}%>
         <h1>Flight listings</h1>
     </body>

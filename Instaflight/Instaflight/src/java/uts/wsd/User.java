@@ -53,6 +53,15 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+    
     public void setAll(String name, String email, String password, String dob){
         this.name = name;
         this.email = email;
