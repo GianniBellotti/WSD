@@ -28,11 +28,7 @@
         <%Users users = userApp.getUsers();%>
     </head>
     <body>
-        <%if (users.checkEmail(email) == 1) {%>
-        <p>Email: <%=email%> already registered with us, please try again </p>
-        <p>Click <a href="register.jsp">here</a> to go back.</p>
-
-        <%  } else if (name == null) { %>
+        <%  if (name == null) { %>
         <%  session.setAttribute("Referer", request.getHeader("Referer")); %> 
         <h1>Register</h1>
         <form action="register.jsp" method="POST">
@@ -45,14 +41,19 @@
             <input type="submit" value="Register">          
         </form>
 
-        <%  } else {
-
-            User user = new User(email, name, password, dob);
-            session.setAttribute("user", user);
-            users.addUser(user);
-            userApp.updateXML(users, filePath);
-        %>
-        <p>Registration successful. <a href="<%= session.getAttribute("Referer")%>">Continue browsing.</a>
+        <%  } else if(users.checkEmail(email) == 1) { %>
+        <h1>Register</h1>
+        <form action="register.jsp" method="POST">
+            <table>
+                <tr><td>Email</td><td><input type="text" name="email" value=""></td><td>Email: <%=email%> is already registered.</td></tr>
+                <tr><td>Full Name</td><td><input type="text" name="name" value="<%= name %>"></td></tr>
+                <tr><td>Password</td><td><input type="password" name="password"></td></tr>
+                <tr><td>Date of Birth</td><td><input type="date" name="dob" value="<%= dob %>"></td></tr>
+            </table>
+            <input type="submit" value="Register">          
+        </form>
+        <% } else { %>
+            <p>Registration successful. <a href="<%= session.getAttribute("Referer")%>">Continue browsing.</a>
         <%}%>
     </body>
 </html>
