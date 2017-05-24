@@ -45,6 +45,24 @@
                 <td>
                     <xsl:value-of select="@Price"/>
                 </td>
+                <td>
+                    <xsl:value-of select="@Price"/>
+                </td>
+                <td>
+                    <a href="book.jsp?id={@id}">View</a>
+                </td>
             </tr>
+        </xsl:template>
+        <xsl:template match="bookdetail">
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/{@id}.png"/>
+                    </td>
+                    <td>
+                        blehlbhelbhee,
+                    </td>
+                </tr>
+            </table>
         </xsl:template>
 </xsl:stylesheet>
