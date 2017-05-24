@@ -22,6 +22,11 @@
         <table>
             <tr><td><a href="login.jsp" >Login</a></td><td><a href="register.jsp">Register</a></td></tr>
         </table>
+        <%}else if(user.getName().equals("Admin")){%>
+            <table>
+            <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
+                <td><a href="logout.jsp">Logout</a></td><td><a href="admin.jsp">Manage Flight</a></td></tr>
+            </table>
         <%}else{%>
         <table>
             <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
@@ -36,6 +41,8 @@
                 <tr><td>Departure Date</td><td><input id="date" min="2017-05-22" type="date"></td></tr>
                 
                 <tr><td>Return Date</td><td><input id="date" min="2017-05-22" type="date"></td></tr>
+                <tr><td><input type="radio" name="type" value="economy" checked> Economy<br>
+                        <input type="radio" name="type" value="business"> Business<br>
             </table>
             <input type="submit" value="Search">
             
