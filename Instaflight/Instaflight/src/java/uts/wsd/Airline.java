@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "airline")
 public class Airline {
 
-    String name;
+    private String name;
     @XmlElement(name = "flight")
     private List<Flight> flights = new ArrayList<Flight>();
 
@@ -33,5 +33,16 @@ public class Airline {
 
     public List<Flight> getFlights() {
         return flights;
+    }
+    public Flight getFlightbyID(int ID)
+    {
+        for (Flight flight : flights) {
+            if (flight.getID() == ID)
+                return flight; // Login correct. Return this user.
+        }
+        return null; // Login incorrect. Return null.
+    }
+    public String getName(){
+        return name;
     }
 }

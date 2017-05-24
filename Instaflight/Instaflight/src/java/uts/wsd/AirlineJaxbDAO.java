@@ -23,7 +23,7 @@ public class AirlineJaxbDAO implements AirlineDAO{
         return filePath;
     }
     
-    public void setFilePath() throws Exception{
+    public void setFilePath(String filePath) throws Exception{
         this.filePath = filePath;
         // Create the unmarshaller
         JAXBContext jc = JAXBContext.newInstance(Airline.class);
@@ -34,17 +34,17 @@ public class AirlineJaxbDAO implements AirlineDAO{
     }
     @Override
     public String getAirlineName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return airline.getName();
     }
 
     @Override
     public Flight getFlight(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return airline.getFlightbyID(id);
     }
 
     @Override
-    public List<Flight> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Airline getAirline() {
+        return airline;
     }
     
 }

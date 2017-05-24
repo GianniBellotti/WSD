@@ -14,7 +14,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Flight {
-    private int id;
+    private int ID;
+    private String origin;
     private String destination;
     private String departTime;
     private String returnTime;
@@ -23,9 +24,9 @@ public class Flight {
     private int seat;
     public Flight(){
     };
-    public Flight(int id, String destination,String departTime,String returnTime,int price,String type, int seat)
+    public Flight(int ID,String origin, String destination,String departTime,String returnTime,int price,String type, int seat)
     {
-        this.id = id;
+        this.ID = ID;
         this.destination = destination;
         this.departTime = departTime;
         this.returnTime = returnTime;
@@ -34,12 +35,16 @@ public class Flight {
         this.seat = seat;
     };
 
+    public String getOrigin() {
+        return origin;
+    }
+
     public void setSeat(int seat) {
         this.seat = seat;
     }
 
-    public int getId() {
-        return id;
+    public int getID() {
+        return ID;
     }
 
     public String getDestination() {

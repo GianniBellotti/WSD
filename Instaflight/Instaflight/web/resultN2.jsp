@@ -1,4 +1,7 @@
-<%@page import="uts.wsd.User"%><%@page contentType="application/xml"%><?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="pageStyling.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="pageStyling.xsl"?>
+<%@page import="uts.wsd.Flight"%>
+<%@page import="uts.wsd.Airline"%>
+<%@page import="uts.wsd.User"%><%@page contentType="application/xml"%>
 <page title="Result">
     <%User user = (User)session.getAttribute("user");%>
         <%
@@ -10,13 +13,22 @@
         <%}else{%>
         <customer name="<%=user.getName()%>"/>
         <%}%>
-        <%String filePath = application.getRealPath("WEB-INF/users.xml");%>
+        <%String filePath = application.getRealPath("WEB-INF/flights.xml");%>
         <jsp:useBean id="airlineDao" class="uts.wsd.AirlineJaxbDAO" scope="application">
             <jsp:setProperty name="airlineDao" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
         <result>
-            <flight id="0" origin="Sydney" destination="Perth" departTime="2017-05-27" returnDate="2017-06-28" price="500" type="economy" seat="100"/>
-            <flight id="1" origin="Sydney" destination="Perth" departTime="2017-05-27" returnDate="2017-06-28" price="500" type="economy" seat="100"/>
-            <flight id="2" origin="Sydney" destination="Perth" departTime="2017-05-27" returnDate="2017-06-28" price="500" type="economy" seat="100"/>
+            <%Airline airline = airlineDao.getAirline();
+            int i = 0;
+        for (Flight flight : airline.getFlights()){
+            %>
+        <flight id="<%=airline.getFlightbyID(i).getID()%>" 
+                origin="<%=airline.getFlightbyID(i).getOrigin()%>" 
+                destination="<%=airline.getFlightbyID(i).getDestination()%>" 
+                departTime="<%=airline.getFlightbyID(i).getDepartTime()%>" 
+                returnDate="<%=airline.getFlightbyID(i).getReturnTime()%>" 
+                price="500" type="<%=airline.getFlightbyID(i).getPrice()%>" 
+                seat="<%=airline.getFlightbyID(i).getSeat()%>"/>
+        <%i++;}%>
         </result>
 </page>

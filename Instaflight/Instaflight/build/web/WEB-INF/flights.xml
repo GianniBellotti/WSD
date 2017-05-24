@@ -14,7 +14,7 @@ and open the template in the editor.
         <returnTime>2017-05-28</returnTime>
         <price>500</price>
         <type>economy</type>
-        <seat>100</seat>
+        <seat>50</seat>
     </flight>
     <flight>
         <ID>1</ID>
@@ -24,7 +24,7 @@ and open the template in the editor.
         <returnTime>2017-06-02</returnTime>
         <price>320</price>
         <type>economy</type>
-        <seat>100</seat>
+        <seat>203</seat>
     </flight>
     <flight>
         <ID>2</ID>
@@ -34,7 +34,7 @@ and open the template in the editor.
         <returnTime>2017-06-05</returnTime>
         <price>520</price>
         <type>business</type>
-        <seat>100</seat>
+        <seat>23</seat>
     </flight>
     <flight>
         <ID>3</ID>
@@ -44,6 +44,6 @@ and open the template in the editor.
         <returnTime>2017-05-28</returnTime>
         <price>602</price>
         <type>business</type>
-        <seat>100</seat>
+        <seat>18</seat>
     </flight>
 </airline>

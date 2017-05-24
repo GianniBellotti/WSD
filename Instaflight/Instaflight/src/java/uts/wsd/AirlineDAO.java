@@ -14,5 +14,5 @@ import java.util.List;
 public interface AirlineDAO {
     String getAirlineName();
     Flight getFlight(int id);
-    List<Flight> getAll();
+    Airline getAirline();
 }
