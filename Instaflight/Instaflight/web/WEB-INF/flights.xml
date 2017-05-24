@@ -4,24 +4,27 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<flights>
+<airline>
+    <name>Instaflight</name>
     <flight>
         <ID>0</ID>
         <origin>Sydney</origin>
         <destination>Perth</destination>
         <departTime>2017-05-27</departTime>
         <returnTime>2017-05-28</returnTime>
-        <price>$500</price>
+        <price>500</price>
         <type>economy</type>
+        <seat>100</seat>
     </flight>
     <flight>
-        <ID>1/ID>
+        <ID>1</ID>
         <origin>Brisbane</origin>
         <destination>Sydney</destination>
         <departTime>2017-06-01</departTime>
         <returnTime>2017-06-02</returnTime>
-        <price>$320</price>
+        <price>320</price>
         <type>economy</type>
+        <seat>100</seat>
     </flight>
     <flight>
         <ID>2</ID>
@@ -29,8 +32,9 @@ and open the template in the editor.
         <destination>Brisbane</destination>
         <departTime>2017-06-04</departTime>
         <returnTime>2017-06-05</returnTime>
-        <price>$520</price>
+        <price>520</price>
         <type>business</type>
+        <seat>100</seat>
     </flight>
     <flight>
         <ID>3</ID>
@@ -38,7 +42,8 @@ and open the template in the editor.
         <destination>Perth</destination>
         <departTime>2017-05-27</departTime>
         <returnTime>2017-05-28</returnTime>
-        <price>$602</price>
+        <price>602</price>
         <type>business</type>
+        <seat>100</seat>
     </flight>
-</flights>
+</airline>
