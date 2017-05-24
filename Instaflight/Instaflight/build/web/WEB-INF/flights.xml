@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<flights>
+    <flight>
+        <ID>0</ID>
+        <origin>Sydney</origin>
+        <destination>Perth</destination>
+        <departTime>2017-05-27</departTime>
+        <returnTime>2017-05-28</returnTime>
+        <price>$500</price>
+        <type>economy</type>
+    </flight>
+    <flight>
+        <ID>1/ID>
+        <origin>Brisbane</origin>
+        <destination>Sydney</destination>
+        <departTime>2017-06-01</departTime>
+        <returnTime>2017-06-02</returnTime>
+        <price>$320</price>
+        <type>economy</type>
+    </flight>
+    <flight>
+        <ID>2</ID>
+        <origin>Perth</origin>
+        <destination>Brisbane</destination>
+        <departTime>2017-06-04</departTime>
+        <returnTime>2017-06-05</returnTime>
+        <price>$520</price>
+        <type>business</type>
+    </flight>
+    <flight>
+        <ID>3</ID>
+        <origin>Brisbane</origin>
+        <destination>Perth</destination>
+        <departTime>2017-05-27</departTime>
+        <returnTime>2017-05-28</returnTime>
+        <price>$602</price>
+        <type>business</type>
+    </flight>
+</flights>
