@@ -30,7 +30,7 @@ public final class testList_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/xml");
+      response.setContentType("application/xml");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,6 +41,7 @@ public final class testList_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
       out.write("<?xml-stylesheet type=\"text/xsl\" href=\"page.xsl\"?>\n");
       out.write("<page title=\"Bob's bookshop\">\n");
       out.write("    <booklist>\n");
