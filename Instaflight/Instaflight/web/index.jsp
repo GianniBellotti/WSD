@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
         <title>Home</title>
     </head>
     <body>
@@ -19,9 +20,9 @@
         <%
             if (user == null){
         %>
-        <table>
-            <tr><td><a href="login.jsp" >Login</a></td><td><a href="register.jsp">Register</a></td></tr>
-        </table>
+        
+        <p><a href="login.jsp" >Login</a> | <a href="register.jsp">Register</a></p>
+    
         <%}else if(user.getName().equals("Admin")){%>
             <table>
             <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
@@ -41,8 +42,9 @@
                 <tr><td>Departure Date</td><td><input id="date" min="2017-05-22" type="date"></td></tr>
                 
                 <tr><td>Return Date</td><td><input id="date" min="2017-05-22" type="date"></td></tr>
-                <tr><td><input type="radio" name="type" value="economy" checked> Economy<br>
-                        <input type="radio" name="type" value="business"> Business<br>
+                <tr><td>Type</td><td><input type="radio" name="type" value="economy" checked> Economy<br>
+                        <input type="radio" name="type" value="business"> Business<br></td>
+                </tr>
             </table>
             <input type="submit" value="Search">
             

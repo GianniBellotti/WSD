@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class testList_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -30,7 +30,7 @@ public final class testList_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("application/xml");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,14 +41,30 @@ public final class testList_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n");
-      out.write("<?xml-stylesheet type=\"text/xsl\" href=\"page.xsl\"?>\r\n");
-      out.write("<page title=\"Bob's bookshop\">\r\n");
-      out.write("    <booklist>\r\n");
-      out.write("        <booklink id=\"0\" title=\"Book 1\" author=\"Me\" price=\"14.99\"/>\r\n");
-      out.write("        <booklink id=\"1\" title=\"Book 2\" author=\"You\" price=\"15.99\"/>\r\n");
-      out.write("    </booklist>\r\n");
-      out.write("</page>\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Register</title>\n");
+      out.write("        \n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <h1>Register</h1>\n");
+      out.write("        <form action=\"welcome.jsp\" method=\"POST\">\n");
+      out.write("            <table>\n");
+      out.write("                <tr><td>Email</td><td><input type=\"text\" name=\"email\" size=\"25\"></td></tr>\n");
+      out.write("                <tr><td>Full Name</td><td><input type=\"text\" name=\"name\" size=\"25\"></td></tr>\n");
+      out.write("                <tr><td>Password</td><td><input type=\"password\" name=\"password\" size=\"25\"></td></tr>\n");
+      out.write("                <tr><td>Date of Birth</td><td><input type=\"date\" name=\"dob\"</td></tr>\n");
+      out.write("            </table>\n");
+      out.write("            <input type=\"submit\" value=\"Register\">\n");
+      out.write("            \n");
+      out.write("        </form>\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
