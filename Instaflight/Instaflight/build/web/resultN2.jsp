@@ -25,9 +25,9 @@
     <%
         String from = request.getParameter("from");
         String to = request.getParameter("to");
-        if(from != null && to != null)
+        if(from != "" && to != "")
         {
-            Airline airline = airline = airlineDao.getByCity(from, to);
+            Airline airline = airlineDao.getByCity(from, to);
              int i = 0;
         for (Flight flight : airline.getFlights()) {
             flight = airline.getFlights().get(i);
