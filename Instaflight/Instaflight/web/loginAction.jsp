@@ -23,12 +23,6 @@
     </jsp:useBean>
     <body>
         <div id="page">
-            <div id="navigation">
-                <ul>
-                    <li><a href="register.jsp">Register</a></li>
-                    <li><a href="login.jsp">Login</a></li>
-                </ul>	
-            </div>
 
             <% Users users = userApp.getUsers();
                 User user = users.login(email, password);
@@ -40,5 +34,6 @@
             <%} else {%>
             <p>Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
             <%}%>
+        </div>
     </body>
 </html>
