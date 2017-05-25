@@ -4,6 +4,7 @@
     Author     : Gianni
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page import="uts.wsd.Booking"%>
 <%@page import="uts.wsd.Airline"%>
 <%@page import="uts.wsd.Bookings"%>
@@ -31,15 +32,18 @@
         <%
             Bookings bookings = bookingApp.getBookings();
             Booking booking = bookings.getBookingbyID(id);
-            %>
+            
+            if(booking != null) {
+        %>
         
         <h1>Booking</h1>
-        <p>Name: <%= booking %></p>
-        <p>Email: <% booking.getEmail(); %></p>
-        <p>CustomerID: <% booking.getCustID(); %></p>
+        <p>Name: <%= booking.getName() %></p>
+        <p>Email: <%= booking.getEmail() %></p>
+        <p>CustomerID: <%= booking.getCustID() %></p>
         <p>FlightID: <%= id %></p>
         
         <%
+            } else {
             String flightFilePath = application.getRealPath("WEB-INF/flights.xml");
         %>
         <jsp:useBean id="airlineDao" class="uts.wsd.AirlineJaxbDAO" scope="application">

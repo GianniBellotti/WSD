@@ -6,11 +6,15 @@
 package uts.wsd;
 
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 
 /**
  *
  * @author Gianni
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Booking implements Serializable {
     
     private String name;

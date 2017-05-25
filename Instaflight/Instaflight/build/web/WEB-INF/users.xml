@@ -11,28 +11,24 @@
         <email>jun@gmail.com</email>
         <password>abc123</password>
         <dob>1996-12-10</dob>
-        <customerid>1</customerid>
     </user>
     <user>
         <name>Andrew Hang</name>
         <email>andrew@gmail.com</email>
         <password>abc123</password>
         <dob>1995-10-03</dob>
-        <customerid>2</customerid>
     </user>
     <user>
         <name>Steve Mcnugget</name>
         <email>steve@gmail.com</email>
         <password>123</password>
         <dob>1233-04-23</dob>
-        <customerid>3</customerid>
     </user>
     <user>
         <name>Jack Do</name>
         <email>jack@gmail.com</email>
         <password>123</password>
         <dob>3321-12-21</dob>
-        <customerid>4</customerid>
     </user>
     <user>
         <name>yjgukh,k</name>
@@ -122,6 +118,36 @@
         <name>rthryjmj</name>
         <email>rhetryhmgj </email>
         <password>erhtryjmj</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>yku,hik.bjl</name>
+        <email>ryjtuky</email>
+        <password>hghjhkjl</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>thryjn</name>
+        <email>rethrnyte</email>
+        <password>5h6y</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>tryjmtj tr</name>
+        <email>rshetnrym</email>
+        <password>ymj </password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>fmhgj mh</name>
+        <email>dnfmh</email>
+        <password>gj </password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>dtjkyult</name>
+        <email>srdthyjkuyr</email>
+        <password>dtjkyfulgi</password>
         <dob></dob>
     </user>
 </users>
