@@ -42,6 +42,7 @@ public class Airline {
         }
         return null; // Login incorrect. Return null.
     }
+<<<<<<< HEAD
     public List<Flight> getByCity(String from, String destination){
         
         /*for (Flight flight : flights) {
@@ -63,6 +64,9 @@ public class Airline {
     public void setFlights(List<Flight> flights) {
         this.flights = flights;
     }
+=======
+    
+>>>>>>> 33e46f77dee1ebac1a7c78fa377a511f2d69ccba
     public String getName(){
         return name;
     }
