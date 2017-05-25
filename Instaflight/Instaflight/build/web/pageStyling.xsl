@@ -81,7 +81,7 @@
                     <xsl:value-of select="@seat"/>
                 </td>
                 <td>
-                    <button type="button" onclick="book.jsp{@id}">Book</button>
+                    <button type="button" onclick="book.jsp{@id}" >Book</button>
                 </td>
             </tr>
         </xsl:template>
