@@ -35,7 +35,7 @@
             <td><a href="logout.jsp">Logout</a></td></tr>
             </table>
         </xsl:template>
-        <xsl:template match="result">
+        <xsl:template match="list">
             <table>
                 <thead>
                     <tr>
@@ -55,7 +55,7 @@
             </table>
         </xsl:template>
         <xsl:template match="flight">
-            <tr>
+            <tr align="center">
                 <td>
                     <xsl:value-of select="@id"/>
                 </td>
@@ -81,7 +81,7 @@
                     <xsl:value-of select="@seat"/>
                 </td>
                 <td>
-                    <a href="book.jsp?id={@id}">View</a>
+                    <button type="button" onclick="book.jsp{@id}">Book</button>
                 </td>
             </tr>
         </xsl:template>
