@@ -4,7 +4,7 @@
 <%@page import="uts.wsd.User"%><%@page contentType="application/xml"%>
 <page title="Result">
     <%User user = (User) session.getAttribute("user");
-        String loginCheck = " ";
+        String loginCheck = "visitor";
     %>
     <%
         if (user == null) {
@@ -12,7 +12,7 @@
 
     <visitor/>
 
-    <%} else if (user.getName().equals("Admin")) {%>
+    <%} else if (user.getName() =="Admin") {%>
     <admin <%=user.getName()%>/>
     <%} else {%>
     <customer name="<%=user.getName()%>"/>
