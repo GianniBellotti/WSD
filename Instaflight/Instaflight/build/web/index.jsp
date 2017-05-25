@@ -35,15 +35,15 @@
                 <ul>
 
                     <li><a href="admin.jsp">Admin</a></li>
-                    <li><button type="button" onclick="<%session.invalidate();%> location.reload();">Logout</button></li>
+                    <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
                 </ul>	
             </div>
             <%} else {%>
             <div id="navigation">
                 <p><i>Logged in as &lt;<%=user.getName()%>&gt;</i></p>
                 <ul>
-                    <li><a href="booking.jsp">Booking</a></li>
-                    <li><button type="button" onclick="<%session.invalidate();%> location.reload();">Logout</button></li>
+                    <li><a href="index.jsp">Booking</a></li>
+                    <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
                 </ul>	
             </div>
             <%}%>

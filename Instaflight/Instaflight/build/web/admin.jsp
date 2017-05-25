@@ -35,10 +35,14 @@
             <p><b>Access denied. Please log in.</b>
 
                 <%} else if (user.getName().equals("Admin")) {%>
-            <table>
-                <tr><td><i>Logged in as &lt;<%=user.getName()%>&gt;</i></td>
-                    <td><a href="logout.jsp">Logout</a></td><td><a href="admin.jsp">Manage Flight</a></td></tr>
-            </table>
+            <div id="navigation">
+                <p><i>Logged in as &lt;<%=user.getName()%>&gt;</i></p>
+                <ul>
+
+                    <li><a href="admin.jsp">Admin</a></li>
+                    <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
+                </ul>	
+            </div>
             <div id="header">
                 <h1>Admin</h1>
             </div>
