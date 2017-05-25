@@ -12,5 +12,6 @@ and open the template in the editor.
         <email>jun@gmail.com</email>
         <customerid>1</customerid>
         <flightid>0</flightid>
+        <status>cancelled</status>
     </booking>
 </bookings>

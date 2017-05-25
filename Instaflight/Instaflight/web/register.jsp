@@ -52,7 +52,13 @@
             </table>
             <input type="submit" value="Register">          
         </form>
-        <% } else { %>
+        <% } else { 
+            User user = new User(email, name, password, dob);
+            session.setAttribute("user", user);
+            users.addUser(user);
+            users.login(email, password);
+            userApp.updateXML(users, filePath);
+        %>
             <p>Registration successful. <a href="<%= session.getAttribute("Referer")%>">Continue browsing.</a>
         <%}%>
     </body>
