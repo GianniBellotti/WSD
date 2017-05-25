@@ -95,7 +95,30 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-	
+
+.mflight {
+	margin: 10px 0 10px 0;
+	width: 13%;
+	font-size: 100%;
+	border-width: 1px;
+	border-color: #2e3634;
+	border-collapse: collapse;
+}
+	table th {
+		border-width: 1px;
+		color: white;
+		padding: 10px;
+		border-style: solid;
+		border-color: #2e3634;
+		background-color: rgba(46,54,52,0.8);
+	}
+	table td {
+		border-width: 1px;
+		padding: 10px;
+		border-style: solid;
+		border-color: #2e3634;
+		background-color: rgba(255,255,255,0.7);
+	}
 #page { 
 	width: fluid;
 	margin: 20px; 
