@@ -42,7 +42,31 @@ public class Airline {
         }
         return null; // Login incorrect. Return null.
     }
+<<<<<<< HEAD
+    public List<Flight> getByCity(String from, String destination){
+        
+        /*for (Flight flight : flights) {
+            if(flight.getOrigin().equals(from) && flight.getDestination().equals(destination))
+            {
+                flights.add(flight);
+            }
+        }*/
+        List<Flight> tempFlights = new ArrayList<Flight>();
+        for (int i = 0; i < flights.size(); i++) {
+            Flight flight = getFlightbyID(i);
+            if (flight.getOrigin().equals(from) && flight.getDestination().equals(destination)) {
+                tempFlights.add(flight);
+            }
+        }
+        return tempFlights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
+    }
+=======
     
+>>>>>>> 33e46f77dee1ebac1a7c78fa377a511f2d69ccba
     public String getName(){
         return name;
     }
