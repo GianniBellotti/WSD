@@ -22,18 +22,36 @@
         <jsp:setProperty name="airlineDao" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean>
     <list>
-    <%Airline airline = airlineDao.getAirline();
+    <%
+        String from = request.getParameter("from");
+        String to = request.getParameter("to");
+        Airline airline = airlineDao.getAirline();
+        /*if(from != null && to !=null){
+            airline = airlineDao.getByCity("Sydney", "Perth");
+        }else{
+            airline = airlineDao.getAirline();
+        }*/
+          //airline = airlineDao.getByCity(from, to);
+        if ( airline.getFlights().size() == 0)
+        {
+        }
+        else{
+            
+        
         int i = 0;
         for (Flight flight : airline.getFlights()) {
+            flight = airline.getFlights().get(i);
     %>
-    <flight id="<%=airline.getFlightbyID(i).getID()%>" origin="<%=airline.getFlightbyID(i).getOrigin()%>" destination="<%=airline.getFlightbyID(i).getDestination()%>" 
-            departTime="<%=airline.getFlightbyID(i).getDepartTime()%>" 
-            returnTime="<%=airline.getFlightbyID(i).getReturnTime()%>" 
-            price="<%=airline.getFlightbyID(i).getPrice()%>" 
-            type="<%=airline.getFlightbyID(i).getType()%>" 
-            seat="<%=airline.getFlightbyID(i).getSeat()%>"
+    <flight id="<%=flight.getID()%>" origin="<%=flight.getOrigin()%>" destination="<%=flight.getDestination()%>" 
+            departTime="<%=flight.getDepartTime()%>" 
+            returnTime="<%=flight.getReturnTime()%>" 
+            price="<%=flight.getPrice()%>" 
+            type="<%=flight.getType()%>" 
+            seat="<%=flight.getSeat()%>"
             loginCheck="<%=loginCheck%>"/>
     <%i++;
-            }%>
+            }
+        }
+    %>
     </list>
 </page>
