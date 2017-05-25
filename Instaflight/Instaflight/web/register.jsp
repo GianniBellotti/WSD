@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="style.css" type="text/css">
+
         <title>Register</title>
         <%
             String name = request.getParameter("name");
@@ -28,38 +29,49 @@
         <%Users users = userApp.getUsers();%>
     </head>
     <body>
-        <%  if (name == null) { %>
-        <%  session.setAttribute("Referer", request.getHeader("Referer")); %> 
-        <h1>Register</h1>
-        <form action="register.jsp" method="POST">
-            <table>
-                <tr><td>Email</td><td><input type="text" name="email" size="25"></td></tr>
-                <tr><td>Full Name</td><td><input type="text" name="name" size="25"></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password" size="25"></td></tr>
-                <tr><td>Date of Birth</td><td><input type="date" name="dob"</td></tr>
-            </table>
-            <input type="submit" value="Register">          
-        </form>
+        <div id="page">
+            <%  if (name == null) { %>
+            <%  session.setAttribute("Referer", request.getHeader("Referer")); %>
+            <div id="navigation">
+                <ul>
+                    <li><a href="register.jsp">Register</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                </ul>	
+            </div>
+            <div id="header">
+                <h1>Register</h1>
+            </div>
+            <form action="register.jsp" method="POST">
+                <table class="mflight">
+                    <tr><td>Email</td><td><input type="text" name="email" size="25"></td></tr>
+                    <tr><td>Full Name</td><td><input type="text" name="name" size="25"></td></tr>
+                    <tr><td>Password</td><td><input type="password" name="password" size="25"></td></tr>
+                    <tr><td>Date of Birth</td><td><input type="date" name="dob"</td></tr>
+                </table>
+                <input type="submit" value="Register">          
+            </form>
 
-        <%  } else if(users.checkEmail(email) == 1) { %>
-        <h1>Register</h1>
-        <form action="register.jsp" method="POST">
-            <table>
-                <tr><td>Email</td><td><input type="text" name="email" value=""></td><td>Email: <%=email%> is already registered.</td></tr>
-                <tr><td>Full Name</td><td><input type="text" name="name" value="<%= name %>"></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password"></td></tr>
-                <tr><td>Date of Birth</td><td><input type="date" name="dob" value="<%= dob %>"></td></tr>
-            </table>
-            <input type="submit" value="Register">          
-        </form>
-        <% } else { 
-            User user = new User(email, name, password, dob);
-            session.setAttribute("user", user);
-            users.addUser(user);
-            users.login(email, password);
-            userApp.updateXML(users, filePath);
-        %>
+            <%  } else if (users.checkEmail(email) == 1) {%>
+            <div id="header">
+                <h1>Register</h1>
+            </div>>
+            <form action="register.jsp" method="POST">
+                <table>
+                    <tr><td>Email</td><td><input type="text" name="email" value=""></td><td>Email: <%=email%> is already registered.</td></tr>
+                    <tr><td>Full Name</td><td><input type="text" name="name" value="<%= name%>"></td></tr>
+                    <tr><td>Password</td><td><input type="password" name="password"></td></tr>
+                    <tr><td>Date of Birth</td><td><input type="date" name="dob" value="<%= dob%>"></td></tr>
+                </table>
+                <input type="submit" value="Register">          
+            </form>
+            <% } else {
+                User user = new User(email, name, password, dob);
+                session.setAttribute("user", user);
+                users.addUser(user);
+                users.login(email, password);
+                userApp.updateXML(users, filePath);
+            %>
             <p>Registration successful. <a href="<%= session.getAttribute("Referer")%>">Continue browsing.</a>
-        <%}%>
-    </body>
-</html>
+                <%}%>
+                </body>
+                </html>

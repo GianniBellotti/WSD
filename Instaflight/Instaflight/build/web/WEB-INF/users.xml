@@ -42,4 +42,10 @@
         <password>efgrtb</password>
         <dob></dob>
     </user>
+    <user>
+        <name>admin</name>
+        <email>admin</email>
+        <password>admin</password>
+        <dob>0132-03-12</dob>
+    </user>
 </users>

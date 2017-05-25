@@ -13,13 +13,22 @@
         <title>Login</title>
     </head>
     <body>
-        <h1>Login</h1>
-        <form action="loginAction.jsp" method="POST">
-            <table>
-                <tr><td>Email</td><td><input type="text" name="email"></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password"></td></tr>
-            </table>
-            <input type="submit" value="Login">
-        </form>
+        <div id="page">
+            <div id="navigation">
+                <ul>
+                    <li><a href="register.jsp">Register</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                </ul>	
+            </div>
+            <div id="header">
+                <h1>Login</h1>
+            </div>
+            <form action="loginAction.jsp" method="POST">
+                <table class="mflight">
+                    <tr><td>Email</td><td><input type="text" name="email"></td></tr>
+                    <tr><td>Password</td><td><input type="password" name="password"></td></tr>
+                </table>
+                <input type="submit" value="Login">
+            </form>
     </body>
 </html>

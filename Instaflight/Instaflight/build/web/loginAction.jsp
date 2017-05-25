@@ -22,16 +22,24 @@
         <jsp:setProperty name="userApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean>
     <body>
-        <% Users users = userApp.getUsers();
-            User user = users.login(email, password);
-            if (user != null)
-            {
-                session.setAttribute("user", user);
-            
-        %>
-        <p>Login Successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
-        <%}else{%>
-        <p>Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
-        <%}%>
+        <div id="page">
+            <div id="navigation">
+                <ul>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="register.jsp">Register</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                </ul>	
+            </div>
+
+            <% Users users = userApp.getUsers();
+                User user = users.login(email, password);
+                if (user != null) {
+                    session.setAttribute("user", user);
+
+            %>
+            <p>Login Successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
+            <%} else {%>
+            <p>Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
+            <%}%>
     </body>
 </html>
