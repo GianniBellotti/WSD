@@ -7,7 +7,7 @@ import uts.wsd.Flight;
 import uts.wsd.Airline;
 import uts.wsd.User;
 
-public final class booking_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class resultN2_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -44,24 +44,26 @@ public final class booking_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"bookStyling.xsl\"?>\n");
+      out.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"pageStyling.xsl\"?>\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("<page title=\"Booking\">\n");
+      out.write("<page title=\"Result\">\n");
+      out.write("    ");
+User user = (User) session.getAttribute("user");
+        String loginCheck = "visitor";
+    
       out.write("\n");
       out.write("    ");
 
-        User user = (User) session.getAttribute("user");
-        String idString = request.getParameter("id");
-        int id = Integer.valueOf(idString);
+        if (user == null) {
     
       out.write("\n");
       out.write("\n");
+      out.write("    <visitor/>\n");
+      out.write("\n");
       out.write("    ");
- if (user.getName() == "Admin") {
+} else if (user.getName() =="Admin") {
       out.write("\n");
       out.write("    <admin ");
       out.print(user.getName());
@@ -75,13 +77,10 @@ public final class booking_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    ");
 }
       out.write("\n");
+      out.write("    ");
+String filePath = application.getRealPath("WEB-INF/flights.xml");
       out.write("\n");
       out.write("    ");
-
-        String bookingFilePath = application.getRealPath("WEB-INF/bookings.xml");
-        String flightFilePath = application.getRealPath("WEB-INF/flights.xml");
-    
-      out.write('\n');
       uts.wsd.AirlineJaxbDAO airlineDao = null;
       synchronized (application) {
         airlineDao = (uts.wsd.AirlineJaxbDAO) _jspx_page_context.getAttribute("airlineDao", PageContext.APPLICATION_SCOPE);
@@ -89,39 +88,93 @@ public final class booking_jsp extends org.apache.jasper.runtime.HttpJspBase
           airlineDao = new uts.wsd.AirlineJaxbDAO();
           _jspx_page_context.setAttribute("airlineDao", airlineDao, PageContext.APPLICATION_SCOPE);
           out.write("\n");
+          out.write("        ");
+          org.apache.jasper.runtime.JspRuntimeLibrary.handleSetProperty(_jspx_page_context.findAttribute("airlineDao"), "filePath",
+filePath);
+          out.write("\n");
           out.write("    ");
-          org.apache.jasper.runtime.JspRuntimeLibrary.handleSetProperty(_jspx_page_context.findAttribute("airlineDao"), "flightFilePath",
-flightFilePath);
-          out.write('\n');
         }
       }
       out.write("\n");
-      out.write("<list>\n");
- Airline airline = airlineDao.getAirline();
+      out.write("    <list>\n");
+      out.write("    ");
+
+        String from = request.getParameter("from");
+        String to = request.getParameter("to");
+        if(from != null && to != null)
+        {
+            Airline airline = airline = airlineDao.getByCity(from, to);
+             int i = 0;
+        for (Flight flight : airline.getFlights()) {
+            flight = airline.getFlights().get(i);
+            
       out.write("\n");
-      out.write("<flight id=\"");
-      out.print(airline.getFlightbyID(id).getID());
+      out.write("    <flight id=\"");
+      out.print(flight.getID());
       out.write("\" origin=\"");
-      out.print(airline.getFlightbyID(id).getOrigin());
+      out.print(flight.getOrigin());
       out.write("\" destination=\"");
-      out.print(airline.getFlightbyID(id).getDestination());
+      out.print(flight.getDestination());
       out.write("\" \n");
-      out.write("        departTime=\"");
-      out.print(airline.getFlightbyID(id).getDepartTime());
+      out.write("            departTime=\"");
+      out.print(flight.getDepartTime());
       out.write("\" \n");
-      out.write("        returnTime=\"");
-      out.print(airline.getFlightbyID(id).getReturnTime());
+      out.write("            returnTime=\"");
+      out.print(flight.getReturnTime());
       out.write("\" \n");
-      out.write("        price=\"");
-      out.print(airline.getFlightbyID(id).getPrice());
+      out.write("            price=\"");
+      out.print(flight.getPrice());
       out.write("\" \n");
-      out.write("        type=\"");
-      out.print(airline.getFlightbyID(id).getType());
+      out.write("            type=\"");
+      out.print(flight.getType());
       out.write("\" \n");
-      out.write("        seat=\"");
-      out.print(airline.getFlightbyID(id).getSeat());
+      out.write("            seat=\"");
+      out.print(flight.getSeat());
+      out.write("\"\n");
+      out.write("            loginCheck=\"");
+      out.print(loginCheck);
       out.write("\"/>\n");
-      out.write("</list>\n");
+      out.write("    ");
+i++;}
+        }else{
+          Airline airline = airlineDao.getAirline();
+        int i = 0;
+        for (Flight flight : airline.getFlights()) {
+            flight = airline.getFlights().get(i);
+    
+      out.write("\n");
+      out.write("    <flight id=\"");
+      out.print(flight.getID());
+      out.write("\" origin=\"");
+      out.print(flight.getOrigin());
+      out.write("\" destination=\"");
+      out.print(flight.getDestination());
+      out.write("\" \n");
+      out.write("            departTime=\"");
+      out.print(flight.getDepartTime());
+      out.write("\" \n");
+      out.write("            returnTime=\"");
+      out.print(flight.getReturnTime());
+      out.write("\" \n");
+      out.write("            price=\"");
+      out.print(flight.getPrice());
+      out.write("\" \n");
+      out.write("            type=\"");
+      out.print(flight.getType());
+      out.write("\" \n");
+      out.write("            seat=\"");
+      out.print(flight.getSeat());
+      out.write("\"\n");
+      out.write("            loginCheck=\"");
+      out.print(loginCheck);
+      out.write("\"/>\n");
+      out.write("    ");
+i++;
+            }
+        }
+    
+      out.write("\n");
+      out.write("    </list>\n");
       out.write("</page>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

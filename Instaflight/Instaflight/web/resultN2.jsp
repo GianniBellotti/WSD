@@ -25,19 +25,23 @@
     <%
         String from = request.getParameter("from");
         String to = request.getParameter("to");
-        Airline airline = airlineDao.getAirline();
-        /*if(from != null && to !=null){
-            airline = airlineDao.getByCity("Sydney", "Perth");
-        }else{
-            airline = airlineDao.getAirline();
-        }*/
-          //airline = airlineDao.getByCity(from, to);
-        if ( airline.getFlights().size() == 0)
+        if(from != "" && to != "")
         {
-        }
-        else{
-            
-        
+            Airline airline = airlineDao.getByCity(from, to);
+             int i = 0;
+        for (Flight flight : airline.getFlights()) {
+            flight = airline.getFlights().get(i);
+            %>
+    <flight id="<%=flight.getID()%>" origin="<%=flight.getOrigin()%>" destination="<%=flight.getDestination()%>" 
+            departTime="<%=flight.getDepartTime()%>" 
+            returnTime="<%=flight.getReturnTime()%>" 
+            price="<%=flight.getPrice()%>" 
+            type="<%=flight.getType()%>" 
+            seat="<%=flight.getSeat()%>"
+            loginCheck="<%=loginCheck%>"/>
+    <%i++;}
+        }else{
+          Airline airline = airlineDao.getAirline();
         int i = 0;
         for (Flight flight : airline.getFlights()) {
             flight = airline.getFlights().get(i);

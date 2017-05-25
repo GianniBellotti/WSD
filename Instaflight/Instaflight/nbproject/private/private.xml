@@ -4,11 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/src/java/uts/wsd/Airline.java</file>
+            <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/web/admin.jsp</file>
             <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/web/resultN2.jsp</file>
             <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/src/java/uts/wsd/Flight.java</file>
+            <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/web/WEB-INF/bookings.xml</file>
             <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/src/java/uts/wsd/AirlineJaxbDAO.java</file>
             <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/web/pageStyling.xsl</file>
-            <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/web/index.jsp</file>
+            <file>file:/C:/Users/jiaju/OneDrive/Documents/WSD/Instaflight/Instaflight/web/WEB-INF/flights.xml</file>
         </group>
     </open-files>
 </project-private>
