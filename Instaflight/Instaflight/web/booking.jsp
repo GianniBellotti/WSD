@@ -4,14 +4,23 @@
     Author     : Gianni
 --%>
 
+<%@page import="uts.wsd.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Booking</title>
+        
+        <%
+            User user = (User) session.getAttribute("user");
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+        %>
+
+        <% String filePath = application.getRealPath("WEB-INF/bookings.xml"); %>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Booking Details</h1>
     </body>
 </html>

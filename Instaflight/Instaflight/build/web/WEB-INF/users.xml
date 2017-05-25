@@ -11,27 +11,35 @@
         <email>jun@gmail.com</email>
         <password>abc123</password>
         <dob>1996-12-10</dob>
-        <customerid>1</customerid>
     </user>
     <user>
         <name>Andrew Hang</name>
         <email>andrew@gmail.com</email>
         <password>abc123</password>
         <dob>1995-10-03</dob>
-        <customerid>2</customerid>
     </user>
     <user>
         <name>Steve Mcnugget</name>
         <email>steve@gmail.com</email>
         <password>123</password>
         <dob>1233-04-23</dob>
-        <customerid>3</customerid>
     </user>
     <user>
         <name>Jack Do</name>
         <email>jack@gmail.com</email>
         <password>123</password>
         <dob>3321-12-21</dob>
-        <customerid>4</customerid>
+    </user>
+    <user>
+        <name>yjkuyilu</name>
+        <email>dhtfjgkh</email>
+        <password>ytkuyilu.</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>rsgetb</name>
+        <email>efwrgdeb</email>
+        <password>efgrtb</password>
+        <dob></dob>
     </user>
 </users>
