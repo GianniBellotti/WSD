@@ -34,7 +34,8 @@
             <%  session.setAttribute("Referer", request.getHeader("Referer")); %>
             <div id="navigation">
                 <ul>
-                    <li><a href="register.jsp">Register</a></li>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="register.jsp"class="currentpage">Register</a></li>
                     <li><a href="login.jsp">Login</a></li>
                 </ul>	
             </div>

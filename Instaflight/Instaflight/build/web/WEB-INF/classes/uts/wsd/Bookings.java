@@ -14,24 +14,34 @@ import javax.xml.bind.annotation.*;
  * @author Gianni
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "root")
+@XmlRootElement(name = "bookings")
 public class Bookings implements Serializable {
 
-	@XmlElementWrapper(name = "bookings")
-	@XmlElement(name = "booking")
-	private ArrayList<Booking> list = new ArrayList<Booking>();
-	
-	public Bookings() {
-		super();
-	}
-	
-	public ArrayList<Booking> getList() {
-		return list;
-	}
-	public void addBooking(Booking booking) {
-		list.add(booking);
-	}
-	public void removeBooking(Booking booking) {
-		list.remove(booking);
-	}
+    @XmlElement(name = "booking")
+    private ArrayList<Booking> list = new ArrayList<Booking>();
+
+    public Bookings() {
+        super();
+    }
+
+    public ArrayList<Booking> getList() {
+        return list;
+    }
+
+    public Booking getBookingbyID(int ID) {
+        for (Booking booking : list) {
+            if (booking.getCustID() == ID) {
+                return booking;
+            }
+        }
+        return null;
+    }
+
+    public void addBooking(Booking booking) {
+        list.add(booking);
+    }
+
+    public void removeBooking(Booking booking) {
+        list.remove(booking);
+    }
 }

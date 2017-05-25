@@ -24,7 +24,7 @@
             %>
             <div id="navigation">
                 <ul>
-
+                    <li><a href="index.jsp" class="currentpage">Home</a></li>
                     <li><a href="register.jsp">Register</a></li>
                     <li><a href="login.jsp">Login</a></li>
                 </ul>	
@@ -33,7 +33,7 @@
             <div id="navigation">
                 <p><i>Logged in as &lt;<%=user.getName()%>&gt;</i></p>
                 <ul>
-
+                    <li><a href="index.jsp"class="currentpage">Home</a></li>
                     <li><a href="admin.jsp">Admin</a></li>
                     <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
                 </ul>	
@@ -42,7 +42,8 @@
             <div id="navigation">
                 <p><i>Logged in as &lt;<%=user.getName()%>&gt;</i></p>
                 <ul>
-                    <li><a href="index.jsp">Booking</a></li>
+                    <li><a href="index.jsp"class="currentpage">Home</a></li>
+                    <li><a href="booking.jsp">Booking</a></li>
                     <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
                 </ul>	
             </div>
@@ -51,7 +52,7 @@
                 <h1>Search</h1>
             </div>
             <div id="content">
-                <form action="resultN2.jsp" method="POST">
+                <form action="resultN2.jsp" method="POST"> 
                     <table>
                         <tr><td>From</td><td><input type="text" name="from" size="25"></td><td>To</td><td><input type="text" name="to" size="25"></td></tr>
 
