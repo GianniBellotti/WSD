@@ -25,6 +25,7 @@
             %>
             <div id="navigation">
                 <ul>
+                    <li><a href="index.jsp">Home</a></li>
                     <li><a href="register.jsp">Register</a></li>
                     <li><a href="login.jsp">Login</a></li>
                 </ul>	
@@ -38,8 +39,8 @@
             <div id="navigation">
                 <p><i>Logged in as &lt;<%=user.getName()%>&gt;</i></p>
                 <ul>
-
-                    <li><a href="admin.jsp">Admin</a></li>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="admin.jsp" class="currentpage">Admin</a></li>
                     <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
                 </ul>	
             </div>
