@@ -46,8 +46,7 @@ public class AirlineJaxbDAO implements AirlineDAO{
     public Airline getAirline() {
         return airline;
     }
-    public Airline getByCity(String from, String destination){
-        airline.setFlights(airline.getByCity(from, destination));
-        return airline;
+    public List<Flight> getByCity(String from, String destination){        
+        return airline.getByCity(from, destination);
     }
 }

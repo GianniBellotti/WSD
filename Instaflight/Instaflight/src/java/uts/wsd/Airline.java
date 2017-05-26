@@ -43,13 +43,6 @@ public class Airline {
         return null; // Login incorrect. Return null.
     }
     public List<Flight> getByCity(String from, String destination){
-        
-        /*for (Flight flight : flights) {
-            if(flight.getOrigin().equals(from) && flight.getDestination().equals(destination))
-            {
-                flights.add(flight);
-            }
-        }*/
         List<Flight> tempFlights = new ArrayList<Flight>();
         for (int i = 0; i < flights.size(); i++) {
             Flight flight = getFlightbyID(i);
@@ -57,11 +50,17 @@ public class Airline {
                 tempFlights.add(flight);
             }
         }
+        /*List<Flight> tempFlights = new ArrayList<Flight>();
+        for (int i = 0; i < flights.size(); i++) {
+            Flight flight = getFlightbyID(i);
+            if (flight.getOrigin().equals(from) && flight.getDestination().equals(destination)) {
+                tempFlights.add(flight);
+            }
+        }*/
         return tempFlights;
     }
-
-    public void setFlights(List<Flight> flights) {
-        this.flights = flights;
+    public void setFlights(List<Flight> tempList){
+        this.flights = tempList;
     }
     public String getName(){
         return name;

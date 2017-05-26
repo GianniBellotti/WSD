@@ -25,9 +25,10 @@
     <%
         String from = request.getParameter("from");
         String to = request.getParameter("to");
-        if(from != "" && to != "")
+        if(from.equals("") && to.equals(""))
         {
-            Airline airline = airlineDao.getByCity(from, to);
+            Airline airline = airlineDao.getAirline();
+            //Airline airline = airlineDao.getByCity(from, to);
              int i = 0;
         for (Flight flight : airline.getFlights()) {
             flight = airline.getFlights().get(i);
@@ -41,7 +42,8 @@
             loginCheck="<%=loginCheck%>"/>
     <%i++;}
         }else{
-          Airline airline = airlineDao.getAirline();
+            Airline airline = new Airline();
+            airline.setFlights(airlineDao.getByCity(from, to));
         int i = 0;
         for (Flight flight : airline.getFlights()) {
             flight = airline.getFlights().get(i);
