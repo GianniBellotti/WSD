@@ -11,27 +11,146 @@
         <email>jun@gmail.com</email>
         <password>abc123</password>
         <dob>1996-12-10</dob>
-        <customerid>1</customerid>
     </user>
     <user>
         <name>Andrew Hang</name>
         <email>andrew@gmail.com</email>
         <password>abc123</password>
         <dob>1995-10-03</dob>
-        <customerid>2</customerid>
     </user>
     <user>
         <name>Steve Mcnugget</name>
         <email>steve@gmail.com</email>
         <password>123</password>
         <dob>1233-04-23</dob>
-        <customerid>3</customerid>
     </user>
     <user>
         <name>Jack Do</name>
         <email>jack@gmail.com</email>
         <password>123</password>
         <dob>3321-12-21</dob>
-        <customerid>4</customerid>
     </user>
+<<<<<<< HEAD
+    <user>
+        <name>yjgukh,k</name>
+        <email>hdtyjtkuy,</email>
+        <password>gu,hk</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>ethryt</name>
+        <email>etrhyjt</email>
+        <password>ergthrytm</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>rdtnfh</name>
+        <email>sgrtfh</email>
+        <password>bfdngfh</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>efgrdtgnh</name>
+        <email>efasgrdbtgf</email>
+        <password>rbgn</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>aesgr</name>
+        <email>aefsrb</email>
+        <password>fegrbt</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>ghmj</name>
+        <email>rgthfhgm</email>
+        <password>rgdtfyhmgj</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>egrehtrn</name>
+        <email>egsreth</email>
+        <password>rht</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>nybtnhg</name>
+        <email>rehtrymthr</email>
+        <password>btnyhj </password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>h6reytmuyj</name>
+        <email>hrytnyj</email>
+        <password>6yjtmuryj </password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>sbfdg</name>
+        <email>sadfg</email>
+        <password>bfdg f</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>etrnyth</name>
+        <email>rsdbtgfrh</email>
+        <password>trnyth</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>theryjtm</name>
+        <email>efethryj</email>
+        <password>tryjtmu</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>retym</name>
+        <email>rthrym</email>
+        <password>rhtrymh</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>rethn</name>
+        <email>rsehtr</email>
+        <password>ewrhnt</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>rthryjmj</name>
+        <email>rhetryhmgj </email>
+        <password>erhtryjmj</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>yku,hik.bjl</name>
+        <email>ryjtuky</email>
+        <password>hghjhkjl</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>thryjn</name>
+        <email>rethrnyte</email>
+        <password>5h6y</password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>tryjmtj tr</name>
+        <email>rshetnrym</email>
+        <password>ymj </password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>fmhgj mh</name>
+        <email>dnfmh</email>
+        <password>gj </password>
+        <dob></dob>
+    </user>
+    <user>
+        <name>dtjkyult</name>
+        <email>srdthyjkuyr</email>
+        <password>dtjkyfulgi</password>
+        <dob></dob>
+    </user>
+=======
+>>>>>>> 6d7c6722507ef42d137f1b3c8b9da93eda51b6ca
 </users>
