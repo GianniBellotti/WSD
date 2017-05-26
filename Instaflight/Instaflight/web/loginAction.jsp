@@ -32,7 +32,7 @@
             %>
             <p>Login Successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
             <%} else {%>
-            <p>Password incorrect. Click <a href="login.jsp">here</a> to try again.</p>
+            <p>Username or password is incorrect. Click <a href="login.jsp">here</a> to try again.</p>
             <%}%>
         </div>
     </body>

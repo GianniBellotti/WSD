@@ -21,6 +21,7 @@
         %>
             <a href="login.jsp" >Login</a> | <a href="register.jsp">Register</a>
         <%}else{%>
+        
             <i>Logged in as &lt;<%=user.getName()%>&gt;</i> | <button type="button" onclick="<%session.invalidate();%> location.reload(); ">Logout</button>
         <%}%>
         <h1>Flight listings</h1>

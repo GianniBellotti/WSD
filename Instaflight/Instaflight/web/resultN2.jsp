@@ -3,6 +3,7 @@
 <%@page import="uts.wsd.Airline"%>
 <%@page import="uts.wsd.User"%><%@page contentType="application/xml"%>
 <page title="Result">
+    
     <%User user = (User) session.getAttribute("user");
         String loginCheck = "visitor";
     %>
