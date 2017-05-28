@@ -62,6 +62,16 @@ public class Airline {
     public void setFlights(List<Flight> tempList){
         this.flights = tempList;
     }
+    public List<Flight> getByType(String type){
+        List<Flight> tempFlights = new ArrayList<Flight>();
+        for (int i = 0; i < flights.size(); i++) {
+            Flight flight = getFlightbyID(i);
+            if (flight.getType().equals(type)) {
+                tempFlights.add(flight);
+            }
+        }
+        return tempFlights;
+    }
     public String getName(){
         return name;
     }

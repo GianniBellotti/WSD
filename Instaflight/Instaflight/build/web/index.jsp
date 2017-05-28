@@ -62,8 +62,11 @@
                         <tr><td>Departure Date</td><td><input id="date" min="2017-05-22" type="date"></td></tr>
 
                         <tr><td>Return Date</td><td><input id="date" min="2017-05-22" type="date"></td></tr>
-                        <tr><td>Type</td><td><input type="radio" name="type" value="economy" checked> Economy<br>
-                                <input type="radio" name="type" value="business"> Business<br></td>
+                        <tr><td>Type</td><td><select name="type">
+                                    <option value=""></option>
+                                    <option value="economy">Economy</option>
+                                    <option value="business">Business</option>
+                                      </select></td>
                         </tr>
                     </table>
                     <input type="submit" value="Search">

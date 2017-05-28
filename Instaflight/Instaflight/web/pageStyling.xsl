@@ -72,7 +72,7 @@
                     <xsl:value-of select="@returnTime"/>
                 </td>
                 <td>
-                    <xsl:value-of select="@price"/>
+                    $<xsl:value-of select="@price"/>
                 </td>
                 <td>
                     <xsl:value-of select="@type"/>

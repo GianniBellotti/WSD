@@ -26,39 +26,32 @@
     <%
         String from = request.getParameter("from");
         String to = request.getParameter("to");
+        String type = request.getParameter("type");
+        Airline airline = new Airline();
         if(from.equals("") && to.equals(""))
         {
-            Airline airline = airlineDao.getAirline();
-            //Airline airline = airlineDao.getByCity(from, to);
-             int i = 0;
-        for (Flight flight : airline.getFlights()) {
-            flight = airline.getFlights().get(i);
-            %>
-    <flight id="<%=flight.getID()%>" origin="<%=flight.getOrigin()%>" destination="<%=flight.getDestination()%>" 
-            departTime="<%=flight.getDepartTime()%>" 
-            returnTime="<%=flight.getReturnTime()%>" 
-            price="<%=flight.getPrice()%>" 
-            type="<%=flight.getType()%>" 
-            seat="<%=flight.getSeat()%>"
-            loginCheck="<%=loginCheck%>"/>
-    <%i++;}
-        }else{
-            Airline airline = new Airline();
+            airline = airlineDao.getAirline();
+        }else if (type != "" && from != "" && to != ""){
             airline.setFlights(airlineDao.getByCity(from, to));
-        int i = 0;
-        for (Flight flight : airline.getFlights()) {
-            flight = airline.getFlights().get(i);
-    %>
-    <flight id="<%=flight.getID()%>" origin="<%=flight.getOrigin()%>" destination="<%=flight.getDestination()%>" 
-            departTime="<%=flight.getDepartTime()%>" 
-            returnTime="<%=flight.getReturnTime()%>" 
-            price="<%=flight.getPrice()%>" 
-            type="<%=flight.getType()%>" 
-            seat="<%=flight.getSeat()%>"
-            loginCheck="<%=loginCheck%>"/>
-    <%i++;
-            }
+            //airline.setFlights(airline.getByType(type));
         }
+        else
+        {
+             airline.setFlights(airlineDao.getByCity(from, to));
+        }
+    int i = 0;
+    for (Flight flight : airline.getFlights()) {
+        flight = airline.getFlights().get(i);
+        %>
+        <flight id="<%=flight.getID()%>" origin="<%=flight.getOrigin()%>" destination="<%=flight.getDestination()%>" 
+                departTime="<%=flight.getDepartTime()%>" 
+                returnTime="<%=flight.getReturnTime()%>" 
+                price="<%=flight.getPrice()%>" 
+                type="<%=flight.getType()%>" 
+                seat="<%=flight.getSeat()%>"
+                loginCheck="<%=loginCheck%>"/>
+        <%i++;
+            }
     %>
     </list>
 </page>
