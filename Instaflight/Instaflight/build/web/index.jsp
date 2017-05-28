@@ -42,10 +42,7 @@
             <div id="navigation">
                 <p><i>Logged in as &lt;<%=user.getName()%>&gt;</i></p>
                 <ul>
-<<<<<<< HEAD
-=======
                     <li><a href="index.jsp"class="currentpage">Home</a></li>
->>>>>>> 6d7c6722507ef42d137f1b3c8b9da93eda51b6ca
                     <li><a href="booking.jsp">Booking</a></li>
                     <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
                 </ul>	

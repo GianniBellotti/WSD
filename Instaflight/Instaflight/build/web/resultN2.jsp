@@ -13,8 +13,8 @@
 
     <visitor/>
 
-    <%} else if (user.getName() =="Admin") {%>
-    <admin <%=user.getName()%>/>
+    <%} else if (user.getName().equals("Admin")) {%>
+    <admin name="<%=user.getName()%>"/>
     <%} else {%>
     <customer name="<%=user.getName()%>"/>
     <%}%>
