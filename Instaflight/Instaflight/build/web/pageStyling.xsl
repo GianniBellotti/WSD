@@ -7,7 +7,7 @@
         Purpose of transformation follows.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<<<<<<< HEAD
+
         <xsl:template match="page">
             <html>
                 <head>
@@ -78,7 +78,8 @@
                 <td>
                     <xsl:value-of select="@type"/>
                 </td>
-=======
+            </tr>
+             </xsl:template>
     <xsl:template match="page">
         <html>
             <head>
@@ -195,18 +196,4 @@
             </td>
         </tr>
     </xsl:template>
-    <!--
-    <xsl:template match="bookdetail">
-        <table>
-            <tr>
->>>>>>> bfeab3fc8dfd1351527f34a4cabe4d7964c5a057
-                <td>
-                    <img src="images/{@id}.png"/>
-                </td>
-                <td>
-                    blehlbhelbhee,
-                </td>
-            </tr>
-        </table>
-    </xsl:template>-->
 </xsl:stylesheet>
