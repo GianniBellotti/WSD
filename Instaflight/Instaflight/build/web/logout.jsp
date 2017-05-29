@@ -13,7 +13,9 @@
         <title>logout</title>
     </head>
     <body>
-        <p>You have been logged out. Click <a href="index.jsp">here</a> to return to the main page.</p>
-        <%session.invalidate();%> <%-- erase session data --%>
+        <div id="page">
+            <p>You have been logged out. Click <a href="index.jsp">here</a> to return to the main page.</p>
+            <%session.invalidate();%> <%-- erase session data --%>
+        </div>
     </body>
 </html>

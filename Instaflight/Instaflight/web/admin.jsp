@@ -18,7 +18,9 @@
     <body>
 
         <div id="page">
-
+            <div id="header">
+                <h1>Admin</h1>
+            </div>
             <%User user = (User) session.getAttribute("user");%>
             <%
                 if (user == null) { // check only admin accounts are accessing admin.jsp
@@ -30,9 +32,7 @@
                     <li><a href="login.jsp">Login</a></li>
                 </ul>	
             </div>
-            <div id="header">
-                <h1>Admin</h1>
-            </div>
+
             <p><b>Access denied. Please log in.</b>
 
                 <%} else if (user.getName().equals("Admin")) {%>
@@ -43,9 +43,6 @@
                     <li><a href="admin.jsp" class="currentpage">Admin</a></li>
                     <li><button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button></li>
                 </ul>	
-            </div>
-            <div id="header">
-                <h1>Admin</h1>
             </div>
             <table class="mflight">
                 <tr><td><button onclick="window.location.href = '/Instaflight/book.jsp'">View all Bookings</button></td></tr>
