@@ -39,8 +39,8 @@
         {
             airline = airlineDao.getAirline();
         }
-        /*
-        if(departDate != "dd/mm/yyyy" && returnDate != "dd/mm/yyyy"){
+        
+        /*if(!departDate.equals("") && !returnDate.equals("")){
             airline.setFlights(airlineDao.getByDate(departDate, returnDate));
         }*/
         int i = 0;
