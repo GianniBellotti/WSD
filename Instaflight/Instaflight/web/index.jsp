@@ -61,8 +61,8 @@
                         <tr><td>Return Date</td><td><input id="date" min="2017-05-22" type="date"></td></tr>
                         <tr><td>Type</td><td><select name="type">
                                     <option value=""></option>
-                                    <option value="economy">Economy</option>
-                                    <option value="business">Business</option>
+                                    <option value="economy">economy</option>
+                                    <option value="business">business</option>
                                       </select></td>
                         </tr>
                     </table>

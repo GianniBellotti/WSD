@@ -31,9 +31,8 @@
         if(from.equals("") && to.equals(""))
         {
             airline = airlineDao.getAirline();
-        }else if (type != "" && from != "" && to != ""){
-            airline.setFlights(airlineDao.getByCity(from, to));
-            //airline.setFlights(airline.getByType(type));
+        }else if (type != ""){
+            airline.setFlights(airlineDao.getByType(type));
         }
         else
         {
