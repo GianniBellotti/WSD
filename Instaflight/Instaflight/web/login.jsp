@@ -24,7 +24,7 @@
             <div id="header">
                 <h1>Login</h1>
             </div>
-            <form action="loginAction.jsp" method="POST">
+            <form action="loginAction.jsp" method="POST"> <%-- simple login form --%>
                 <table class="mflight">
                     <tr><td>Email</td><td><input type="text" name="email"></td></tr>
                     <tr><td>Password</td><td><input type="password" name="password"></td></tr>

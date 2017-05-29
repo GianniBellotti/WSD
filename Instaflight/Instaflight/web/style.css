@@ -1,3 +1,9 @@
+/* 
+    Document   : style
+    Created on : 25/05/2017, 5:17:30 PM
+    Author     : Gianni
+    Description: Style template which provides consistent layout to every page
+*/
 @CHARSET "UTF-8";
 
 * {
@@ -10,7 +16,7 @@ p {
 
 #header {
     color: rgba(46,54,52,0.8);
-    margin: 0 0 50px 0;
+    margin: 0 0 0 0;
     font-size: 120%; 
     line-height: 100%;
     text-transform: uppercase;
@@ -62,7 +68,7 @@ center {
 }
 #navigation ul li {  
     display: inline-block;
-    text-align: right;
+    text-align: center;
 }
 #navigation ul li a {  
     color: #ffffff;  
@@ -114,42 +120,14 @@ body {
        background-color:#838483;
     }
 
-table th {
-    border-width: 1px;
-    color: white;
-    padding: 10px;
-    border-style: solid;
-    border-color: #2e3634;
-    background-color: rgba(46,54,52,0.8);
-}
-table td {
-    border-width: 1px;
-    padding: 10px;
-    border-style: solid;
-    border-color: #2e3634;
-    background-color: rgba(255,255,255,0.7);
-}
 #page { 
-    width: fluid;
-    margin: 20px; 
+    width: 1000px;
+    margin: 0 auto; 
 }				
 
 #content {
     background: rgba(255,255,255,0.4);
     padding: 20px;
-    float: center;
     border-style: solid;
     border-color: rgba(46,54,52,0.8);
-}
-
-#footer {
-    border-bottom: 1px solid;
-    border-color: rgba(46,54,52,0.7); 
-    margin-bottom: 10px;
-}
-#footer p {
-    text-align: right;
-    text-transform: uppercase;
-    font-size: 80%;
-    color: #2e3634;
 }

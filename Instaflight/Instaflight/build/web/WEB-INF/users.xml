@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!--
-List of users (admin and customers) who have registered
--->
 <users>
     <user>
         <name>Admin</name>
@@ -37,5 +34,12 @@ List of users (admin and customers) who have registered
         <password>123</password>
         <dob>3321-12-21</dob>
         <customerid>4</customerid>
+    </user>
+    <user>
+        <name>gnhm </name>
+        <email>fgnfhm</email>
+        <password>bgnfh </password>
+        <dob></dob>
+        <customerid>-645807313</customerid>
     </user>
 </users>

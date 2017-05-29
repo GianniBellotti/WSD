@@ -16,14 +16,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
         <title>Booking</title>
     </head>
     <body>
         <%
             String idStr = request.getParameter("id");
-            int id = Integer.valueOf(idStr);
+            int id = Integer.valueOf(idStr); // get flight id passed in URL and convert to integer
             
-            session.setAttribute("Referer", request.getHeader("Referer"));
+            session.setAttribute("Referer", request.getHeader("Referer")); //store the URL from previous page in the session
         %>
        
         <% String filePath = application.getRealPath("WEB-INF/bookings.xml");%>
@@ -31,11 +32,11 @@
             <jsp:setProperty name="bookingApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
         <%
-            Bookings bookings = bookingApp.getBookings();           
+            Bookings bookings = bookingApp.getBookings(); // get the bookings list           
             User user = (User) session.getAttribute("user");
             String custID = user.getCustomerid();
             int customerID = Integer.valueOf(custID);
-            Booking booking = bookingApp.getBookingByID(customerID);
+            Booking booking = bookingApp.getBookingByID(customerID); // get the booking matching the currently logged in customer
                     
             if(booking != null) {
         %>
@@ -59,7 +60,7 @@
             <%=airline.getFlightbyID(id).getOrigin()%>
             <%=airline.getFlightbyID(id).getDestination()%>
             <%=airline.getFlightbyID(id).getDepartTime()%> 
-            <%=airline.getFlightbyID(id).getReturnTime()%>
+            <%=airline.getFlightbyID(id).getReturnTime()%> <%-- List flight details if no booking exists --%>
             <%=airline.getFlightbyID(id).getPrice()%> 
             <%=airline.getFlightbyID(id).getType()%> 
             <%=airline.getFlightbyID(id).getSeat()%>
@@ -68,10 +69,9 @@
             <%
                 
                 %>
-                    <a href="BookFlightAction.jsp?id=<%=Integer.toString(id)%>">Book Now</a>
+                <a href="BookFlightAction.jsp?id=<%=Integer.toString(id)%>">Book Now</a>
                 
         </p>
         <% } %>
-        <%= booking %>
     </body>
 </html>

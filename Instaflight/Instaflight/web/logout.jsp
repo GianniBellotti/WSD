@@ -14,6 +14,6 @@
     </head>
     <body>
         <p>You have been logged out. Click <a href="index.jsp">here</a> to return to the main page.</p>
-        <%session.invalidate();%>
+        <%session.invalidate();%> <%-- erase session data --%>
     </body>
 </html>

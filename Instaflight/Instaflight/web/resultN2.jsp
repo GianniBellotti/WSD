@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="pageStyling.xsl"?>
+<%-- 
+    Document   : resultN2
+    Created on : 25/05/2017, 5:17:30 PM
+    Author     : Gianni
+--%>
 <%@page import="uts.wsd.Flight"%>
 <%@page import="uts.wsd.Airline"%>
 <%@page import="uts.wsd.User"%><%@page contentType="application/xml"%>
 <page title="Result">
-    
-    <%User user = (User) session.getAttribute("user");
-        String loginCheck = "visitor";
-    %>
     <%
+        User user = (User) session.getAttribute("user");
+        String loginCheck = "visitor"; //checks if user's not logged in
+        
         if (user == null) {
     %>
-
     <visitor/>
-
     <%} else if (user.getName().equals("Admin")) {%>
     <admin name="<%=user.getName()%>"/>
     <%} else {%>
@@ -27,7 +29,7 @@
         String from = request.getParameter("from");
         String to = request.getParameter("to");
         String type = request.getParameter("type");
-        Airline airline = new Airline();
+        Airline airline = new Airline(); 
         if(from.equals("") && to.equals(""))
         {
             airline = airlineDao.getAirline();

@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author jiaju
+ * @description 
  */
 package uts.wsd;
 
@@ -11,10 +11,6 @@ import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
-/**
- *
- * @author jiaju
- */
 public class AirlineJaxbDAO implements AirlineDAO{
     private String filePath;
     private Airline airline;
