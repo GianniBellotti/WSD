@@ -19,17 +19,17 @@ public class Booking implements Serializable {
     
     private String name;
     private String email;
-    private int custID;
+    private int customerID;
     private int flightID;
             
     public Booking() {
 		super();
 	}
     
-    public Booking(String name, String email, int custID, int flightID) {
+    public Booking(String name, String email, int customerID, int flightID) {
         this.name = name;
         this.email = email;
-        this.custID = custID;
+        this.customerID = customerID;
         this.flightID = flightID;
     }
 
@@ -49,12 +49,12 @@ public class Booking implements Serializable {
         this.email = email;
     }
 
-    public int getCustID() {
-        return custID;
+    public int getCustomerID() {
+        return customerID;
     }
 
-    public void setCustID(int custID) {
-        this.custID = custID;
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
     }
 
     public int getFlightID() {

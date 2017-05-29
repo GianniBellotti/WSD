@@ -4,6 +4,7 @@
     Author     : jiaju
 --%>
 
+<%@page import="java.util.Random"%>
 <%@page import="uts.wsd.User"%>
 <%@page import="uts.wsd.Users"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,8 +20,12 @@
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String dob = request.getParameter("dob");
+            String customerid = request.getParameter("customerid");
 
             String filePath = application.getRealPath("WEB-INF/users.xml");
+
+            Random rand = new Random();
+            int n = rand.nextInt();
         %>
 
         <jsp:useBean id="userApp" class="uts.wsd.userApplication" scope="application">
@@ -31,7 +36,7 @@
     <body>
         <div id="page">
             <%  if (name == null) { %>
-            <%  session.setAttribute("Referer", request.getHeader("Referer")); %>
+            <%  session.setAttribute("Referer", request.getHeader("Referer"));%>
             <div id="navigation">
                 <ul>
                     <li><a href="index.jsp">Home</a></li>
@@ -48,6 +53,7 @@
                     <tr><td>Full Name</td><td><input type="text" name="name" size="25"></td></tr>
                     <tr><td>Password</td><td><input type="password" name="password" size="25"></td></tr>
                     <tr><td>Date of Birth</td><td><input type="date" name="dob"</td></tr>
+                    <tr><td><input type="hidden" name="customerid" value="<%= n%>"></td></tr>
                 </table>
                 <input type="submit" value="Register">          
             </form>
@@ -61,12 +67,13 @@
                     <tr><td>Email</td><td><input type="text" name="email" value=""></td><td>Email: <%=email%> is already registered.</td></tr>
                     <tr><td>Full Name</td><td><input type="text" name="name" value="<%= name%>"></td></tr>
                     <tr><td>Password</td><td><input type="password" name="password"></td></tr>
-                    <tr><td>Date of Birth</td><td><input type="date" name="dob" value="<%= dob%>"></td></tr>
+                    <tr><td>Date of Birth</td><td><input type="date" name="dob" value="<%= dob %>"></td></tr>
+                    <tr><td><input type="hidden" name="customerid" value="<%= n%>"></td></tr>
                 </table>
                 <input type="submit" value="Register">          
             </form>
             <% } else {
-                User user = new User(email, name, password, dob);
+                User user = new User(email, name, password, dob, customerid);
                 session.setAttribute("user", user);
                 users.addUser(user);
                 users.login(email, password);
