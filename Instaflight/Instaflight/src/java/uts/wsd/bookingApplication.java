@@ -54,4 +54,8 @@ public class bookingApplication {
     public Bookings getBookings() {
         return bookings;
     }
+    public Booking getBookingByID(int ID)
+    {
+        return bookings.getBookingbyID(ID);
+    }
 }

@@ -19,8 +19,8 @@ public class Booking implements Serializable {
     
     private String name;
     private String email;
-    private int customerID;
-    private int flightID;
+    private int customerid;
+    private int flightid;
             
     public Booking() {
 		super();
@@ -29,8 +29,8 @@ public class Booking implements Serializable {
     public Booking(String name, String email, int customerID, int flightID) {
         this.name = name;
         this.email = email;
-        this.customerID = customerID;
-        this.flightID = flightID;
+        this.customerid = customerID;
+        this.flightid = flightID;
     }
 
     public String getName() {
@@ -50,18 +50,18 @@ public class Booking implements Serializable {
     }
 
     public int getCustomerID() {
-        return customerID;
+        return customerid;
     }
 
     public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+        this.customerid = customerID;
     }
 
     public int getFlightID() {
-        return flightID;
+        return flightid;
     }
 
     public void setFlightID(int flightID) {
-        this.flightID = flightID;
+        this.flightid = flightID;
     }
 }

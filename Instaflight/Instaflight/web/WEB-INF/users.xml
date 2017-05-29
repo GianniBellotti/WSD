@@ -5,6 +5,7 @@
         <email>admin@gmail.com</email>
         <password>admin</password>
         <dob>1200-03-21</dob>
+        <customerid>0</customerid>
     </user>
     <user>
         <name>Jun Ou</name>

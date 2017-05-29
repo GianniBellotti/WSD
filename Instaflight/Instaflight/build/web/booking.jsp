@@ -21,6 +21,7 @@
     <body>
         <%
             String idStr = request.getParameter("id");
+            String bookPress = request.getParameter("bookPress");
             int id = Integer.valueOf(idStr);
             
             session.setAttribute("Referer", request.getHeader("Referer"));
@@ -35,7 +36,7 @@
             User user = (User) session.getAttribute("user");
             String custID = user.getCustomerid();
             int customerID = Integer.valueOf(custID);
-            Booking booking = bookings.getBookingbyID(customerID);
+            Booking booking = bookingApp.getBookingByID(customerID);
                     
             if(booking != null) {
         %>
@@ -43,7 +44,7 @@
         <h1>Booking</h1>
         <p>Name: <%= booking.getName() %></p>
         <p>Email: <%= booking.getEmail() %></p>
-        <p>CustomerID: <%= user.getCustomerid() %></p>
+        <p>CustomerID: <%= booking.getCustomerID() %></p>
         <p>FlightID: <%= id %></p>
         
         <%
@@ -64,7 +65,21 @@
             <%=airline.getFlightbyID(id).getType()%> 
             <%=airline.getFlightbyID(id).getSeat()%>
             <%= user.getCustomerid() %>
-
+            
+            <%
+                if(bookPress == "1")
+                {
+                Booking b2 = new Booking(user.getName(),user.getEmail(),customerID,id);
+                bookings.addBooking(b2);
+                bookingApp.updateXML(bookings, filePath);
+                %>
+        <p>Flight Booked</p>
+            <%}else{
+                    %><a href="booking.jsp?bookPress=1&id=<%=Integer.toString(id)%>">Book Now</a>
+                    <%
+            }%>
+                
+                
         </p>
         <% } %>
         <%= booking %>
