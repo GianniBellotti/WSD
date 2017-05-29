@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-List of bookings stored in XML
--->
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <bookings>
     <booking>
         <name>Jun Ou</name>

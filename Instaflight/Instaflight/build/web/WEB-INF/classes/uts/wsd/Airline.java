@@ -46,13 +46,6 @@ public class Airline {
                 tempFlights.add(flight);
             }
         }
-        /*List<Flight> tempFlights = new ArrayList<Flight>();
-        for (int i = 0; i < flights.size(); i++) {
-            Flight flight = getFlightbyID(i);
-            if (flight.getOrigin().equals(from) && flight.getDestination().equals(destination)) {
-                tempFlights.add(flight);
-            }
-        }*/
         return tempFlights;
     }
     public void setFlights(List<Flight> tempList){
