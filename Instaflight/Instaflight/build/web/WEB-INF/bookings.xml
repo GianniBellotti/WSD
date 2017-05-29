@@ -1,16 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <bookings>
     <booking>
         <name>Jun Ou</name>
         <email>jun@gmail.com</email>
         <customerid>1</customerid>
         <flightid>0</flightid>
+    </booking>
+    <booking>
+        <name>Andrew Hang</name>
+        <email>andrew@gmail.com</email>
+        <customerid>2</customerid>
+        <flightid>4</flightid>
     </booking>
 </bookings>
