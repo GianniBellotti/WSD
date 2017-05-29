@@ -1,15 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+List of bookings stored in XML
+-->
 <bookings>
     <booking>
         <name>Jun Ou</name>
         <email>jun@gmail.com</email>
         <customerid>1</customerid>
         <flightid>0</flightid>
-    </booking>
-    <booking>
-        <name>Andrew Hang</name>
-        <email>andrew@gmail.com</email>
-        <customerid>2</customerid>
-        <flightid>4</flightid>
     </booking>
 </bookings>

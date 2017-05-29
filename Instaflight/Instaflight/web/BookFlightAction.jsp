@@ -12,21 +12,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Booked Flight</title>
     </head>
     <body>
         <% String filePath = application.getRealPath("WEB-INF/bookings.xml");%>
         <jsp:useBean id="bookingApp" class="uts.wsd.bookingApplication" scope="application">
             <jsp:setProperty name="bookingApp" property="filePath" value="<%=filePath%>"/>
-        </jsp:useBean>
+        </jsp:useBean><%-- invoking the booking application and Booking/Bookings JavaBeans --%>
         <%
             String idStr = request.getParameter("id");
             int id = Integer.valueOf(idStr);
             User user = (User) session.getAttribute("user");
             Bookings bookings = bookingApp.getBookings();  
-            Booking b2 = new Booking(user.getName(),user.getEmail(),Integer.valueOf(user.getCustomerid()),id);
+            Booking b2 = new Booking(user.getName(),user.getEmail(),Integer.valueOf(user.getCustomerid()),id); 
             bookings.addBooking(b2);
-            bookingApp.updateXML(bookings, filePath);%>
+            bookingApp.updateXML(bookings, filePath);%> <%-- add user selected flight to booking.xml --%>
         <h1>Flight booked, flight ID is <%=id%></h1>
             
     </body>

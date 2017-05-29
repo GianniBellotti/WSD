@@ -21,7 +21,7 @@
 
             <%User user = (User) session.getAttribute("user");%>
             <%
-                if (user == null) {
+                if (user == null) { // check only admin accounts are accessing admin.jsp
             %>
             <div id="navigation">
                 <ul>
@@ -51,12 +51,12 @@
                 <tr><td><button onclick="window.location.href = '/Instaflight/book.jsp'">View all Bookings</button></td></tr>
                 <tr><td><button onclick="window.location.href = '/Instaflight/book.jsp'">View booking details</button></td></tr>
                 <tr><td><button onclick="window.location.href = '/Instaflight/book.jsp'">Edit a booking</button></td></tr>
-                <tr><td><button onclick="window.location.href = '/Instaflight/book.jsp'">Cancel a booking</button></td></tr>
+                <tr><td><button onclick="window.location.href = '/Instaflight/book.jsp'">Cancel a booking</button></td></tr> <%-- buttons link to tasks admins can complete --%>
 
                 </tr>
             </table>
             <%} else {%>
-            <i>Logged in as &lt;<%=user.getName()%>&gt;</i> | <button type="button" onclick="<%session.invalidate();%> location.reload();">Logout</button>
+            <i>Logged in as &lt;<%=user.getName()%>&gt;</i> | <button onclick="window.location.href = '/Instaflight/logout.jsp'">Logout</button>
             <%}%>
 
 
