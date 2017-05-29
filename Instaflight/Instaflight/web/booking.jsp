@@ -21,7 +21,6 @@
     <body>
         <%
             String idStr = request.getParameter("id");
-            String bookPress = request.getParameter("bookPress");
             int id = Integer.valueOf(idStr);
             
             session.setAttribute("Referer", request.getHeader("Referer"));
@@ -67,18 +66,9 @@
             <%= user.getCustomerid() %>
             
             <%
-                if(bookPress == "1")
-                {
-                Booking b2 = new Booking(user.getName(),user.getEmail(),customerID,id);
-                bookings.addBooking(b2);
-                bookingApp.updateXML(bookings, filePath);
-                %>
-        <p>Flight Booked</p>
-            <%}else{
-                    %><a href="booking.jsp?bookPress=1&id=<%=Integer.toString(id)%>">Book Now</a>
-                    <%
-            }%>
                 
+                %>
+                    <a href="BookFlightAction.jsp?id=<%=Integer.toString(id)%>">Book Now</a>
                 
         </p>
         <% } %>

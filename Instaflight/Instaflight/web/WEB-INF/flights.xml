@@ -56,4 +56,14 @@ and open the template in the editor.
         <type>business</type>
         <seat>18</seat>
     </flight>
+    <flight>
+        <ID>5</ID>
+        <origin>Brisbane</origin>
+        <destination>Perth</destination>
+        <departTime>2017-06-27</departTime>
+        <returnTime>2017-06-28</returnTime>
+        <price>20</price>
+        <type>economy</type>
+        <seat>0</seat>
+    </flight>
 </airline>

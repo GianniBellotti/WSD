@@ -50,6 +50,13 @@
                 seat="<%=flight.getSeat()%>"
                 loginCheck="<%=loginCheck%>"/>
         <%i++;
+        if(flight.getSeat() == 0)
+        {
+            %><unavailable/><%
+        }else
+        {
+             %><available/><%
+        }
             }
     %>
     </list>
