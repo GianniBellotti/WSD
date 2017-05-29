@@ -16,14 +16,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="style.css" type="text/css">
         <title>Booking</title>
     </head>
     <body>
         <%
-            String idStr = request.getParameter("id");
-            int id = Integer.valueOf(idStr);
+<<<<<<< HEAD
             
-            session.setAttribute("Referer", request.getHeader("Referer"));
+=======
+            String idStr = request.getParameter("id");
+            int id = Integer.valueOf(idStr); // get flight id passed in URL and convert to integer
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
+=======
+>>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
+=======
+>>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
+            
+            session.setAttribute("Referer", request.getHeader("Referer")); //store the URL from previous page in the session
         %>
        
         <% String filePath = application.getRealPath("WEB-INF/bookings.xml");%>
@@ -31,11 +42,11 @@
             <jsp:setProperty name="bookingApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
         <%
-            Bookings bookings = bookingApp.getBookings();           
+            Bookings bookings = bookingApp.getBookings(); // get the bookings list           
             User user = (User) session.getAttribute("user");
             String custID = user.getCustomerid();
             int customerID = Integer.valueOf(custID);
-            Booking booking = bookingApp.getBookingByID(customerID);
+            Booking booking = bookingApp.getBookingByID(customerID); // get the booking matching the currently logged in customer
                     
             if(booking != null) {
         %>
@@ -44,10 +55,13 @@
         <p>Name: <%= booking.getName() %></p>
         <p>Email: <%= booking.getEmail() %></p>
         <p>CustomerID: <%= booking.getCustomerID() %></p>
-        <p>FlightID: <%= id %></p>
-        
+        <p>FlightID: <%= booking.getFlightID() %></p>
+        <button onClick="window.location.href='/Instaflight/cancelBooking.jsp?custID=<%=booking.getCustomerID()%>'">Cancel Booking</button>
         <%
             } else {
+            String idStr = request.getParameter("id");
+            int id = Integer.valueOf(idStr);
+
             String flightFilePath = application.getRealPath("WEB-INF/flights.xml");
         %>
         <jsp:useBean id="airlineDao" class="uts.wsd.AirlineJaxbDAO" scope="application">
@@ -59,7 +73,7 @@
             <%=airline.getFlightbyID(id).getOrigin()%>
             <%=airline.getFlightbyID(id).getDestination()%>
             <%=airline.getFlightbyID(id).getDepartTime()%> 
-            <%=airline.getFlightbyID(id).getReturnTime()%>
+            <%=airline.getFlightbyID(id).getReturnTime()%> <%-- List flight details if no booking exists --%>
             <%=airline.getFlightbyID(id).getPrice()%> 
             <%=airline.getFlightbyID(id).getType()%> 
             <%=airline.getFlightbyID(id).getSeat()%>
@@ -68,10 +82,9 @@
             <%
                 
                 %>
-                    <a href="BookFlightAction.jsp?id=<%=Integer.toString(id)%>">Book Now</a>
+                <a href="BookFlightAction.jsp?id=<%=Integer.toString(id)%>">Book Now</a>
                 
         </p>
         <% } %>
-        <%= booking %>
     </body>
 </html>

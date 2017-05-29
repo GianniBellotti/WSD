@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="style.css" type="text/css">
         <title>JSP Page</title>
     </head>
-    <%String email = request.getParameter("email");
+    <%
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
     %>
     <%String filePath = application.getRealPath("WEB-INF/users.xml");%>
@@ -24,11 +25,11 @@
     <body>
         <div id="page">
 
-            <% Users users = userApp.getUsers();
-                User user = users.login(email, password);
+            <% 
+                Users users = userApp.getUsers();
+                User user = users.login(email, password); // validate login details check and log them in if correct
                 if (user != null) {
-                    session.setAttribute("user", user);
-
+                session.setAttribute("user", user);
             %>
             <p>Login Successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
             <%} else {%>

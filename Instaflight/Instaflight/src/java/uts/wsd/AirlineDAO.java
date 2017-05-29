@@ -1,16 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author jiaju
+ * @description provides a reusable template for data access layer
  */
 package uts.wsd;
 
 import java.util.List;
 
-/**
- *
- * @author jiaju
- */
 public interface AirlineDAO {
     String getAirlineName();
     Flight getFlight(int id);

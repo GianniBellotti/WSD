@@ -25,7 +25,7 @@
             String filePath = application.getRealPath("WEB-INF/users.xml");
 
             Random rand = new Random();
-            int n = rand.nextInt();
+            int n = rand.nextInt(); // generates a random integer for a unique customer id
         %>
 
         <jsp:useBean id="userApp" class="uts.wsd.userApplication" scope="application">
@@ -35,8 +35,11 @@
     </head>
     <body>
         <div id="page">
+            <div id="header">
+                <h1>Register</h1>
+            </div>
             <%  if (name == null) { %>
-            <%  session.setAttribute("Referer", request.getHeader("Referer"));%>
+            <%  session.setAttribute("Referer", request.getHeader("Referer"));%> <%-- get URL of previous page --%>
             <div id="navigation">
                 <ul>
                     <li><a href="index.jsp">Home</a></li>
@@ -44,11 +47,9 @@
                     <li><a href="login.jsp">Login</a></li>
                 </ul>	
             </div>
-            <div id="header">
-                <h1>Register</h1>
-            </div>
+            <div id="content">
             <form action="register.jsp" method="POST">
-                <table class="mflight">
+                <table>
                     <tr><td>Email</td><td><input type="text" name="email" size="25"></td></tr>
                     <tr><td>Full Name</td><td><input type="text" name="name" size="25"></td></tr>
                     <tr><td>Password</td><td><input type="password" name="password" size="25"></td></tr>
@@ -57,14 +58,19 @@
                 </table>
                 <input type="submit" value="Register">          
             </form>
-
-            <%  } else if (users.checkEmail(email) == 1) {%>
-            <div id="header">
-                <h1>Register</h1>
-            </div>>
+            </div>
+            <%  } else if (users.checkEmail(email) == 1) {%>  <%-- check for duplicate email in XML --%>
+            <div id="navigation">
+                <ul>
+                    <li><a href="index.jsp">Home</a></li>
+                    <li><a href="register.jsp"class="currentpage">Register</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                </ul>	
+            </div>
+            <div id="content">
             <form action="register.jsp" method="POST">
                 <table>
-                    <tr><td>Email</td><td><input type="text" name="email" value=""></td><td>Email: <%=email%> is already registered.</td></tr>
+                    <tr><td>Email</td><td><input type="text" name="email" value=""></td><td>Email: <%=email%> is already registered.</td></tr> <%-- present error message --%>
                     <tr><td>Full Name</td><td><input type="text" name="name" value="<%= name%>"></td></tr>
                     <tr><td>Password</td><td><input type="password" name="password"></td></tr>
                     <tr><td>Date of Birth</td><td><input type="date" name="dob" value="<%= dob %>"></td></tr>
@@ -72,14 +78,15 @@
                 </table>
                 <input type="submit" value="Register">          
             </form>
+            </div>
             <% } else {
                 User user = new User(email, name, password, dob, customerid);
                 session.setAttribute("user", user);
                 users.addUser(user);
-                users.login(email, password);
-                userApp.updateXML(users, filePath);
+                users.login(email, password); 
+                userApp.updateXML(users, filePath); // login the newly regsitered user and update XML
             %>
-            <p>Registration successful. <a href="<%= session.getAttribute("Referer")%>">Continue browsing.</a>
+            <p>Registration successful. <a href="<%= session.getAttribute("Referer")%>">Continue browsing.</a> <%-- return user to their previous page --%>
                 <%}%>
                 </body>
                 </html>
