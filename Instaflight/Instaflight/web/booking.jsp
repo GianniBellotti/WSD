@@ -28,6 +28,9 @@
             int id = Integer.valueOf(idStr); // get flight id passed in URL and convert to integer
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
+=======
 >>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
 =======
 >>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42

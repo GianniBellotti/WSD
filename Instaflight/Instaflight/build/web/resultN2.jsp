@@ -10,9 +10,12 @@
 <page title="Result">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     <%User user = (User) session.getAttribute("user");
 =======
+=======
+>>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
 =======
 >>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
     <%
@@ -20,6 +23,9 @@
         String loginCheck = "visitor"; //checks if user's not logged in
         
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
+=======
 >>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
 =======
 >>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
@@ -41,6 +47,7 @@
         String to = request.getParameter("to");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         String type = request.getParameter("select");
         String departDate = request.getParameter("departDate");
         String returnDate = request.getParameter("returnDate");
@@ -48,6 +55,8 @@
         /*
         if(from.equals("") && to.equals("") && type.isEmpty())
 =======
+=======
+>>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
 =======
 >>>>>>> d684cd4fe1c3416d5927f2a19fc2829f0654cb42
         String type = request.getParameter("type");
