@@ -30,7 +30,7 @@ public class Bookings implements Serializable {
 
     public Booking getBookingbyID(int ID) {
         for (Booking booking : list) {
-            if (booking.getCustID() == ID) {
+            if (booking.getFlightID() == ID) {
                 return booking;
             }
         }

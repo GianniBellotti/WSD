@@ -15,19 +15,28 @@ import javax.xml.bind.annotation.XmlAccessorType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable {
-    String name;
-    String email;
-    String password;
-    String dob;
+    private String name;
+    private String email;
+    private String password;
+    private String dob;
+    private String customerid;
     public User(){
     }
     
-    public User(String email, String name,String password, String dob) {
+    public User(String email, String name,String password, String dob, String customerid) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.dob = dob;
-        
+        this.customerid = customerid;
+    }
+
+    public String getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(String customerid) {
+        this.customerid = customerid;
     }
 
     public String getName() {
@@ -62,10 +71,11 @@ public class User implements Serializable {
         this.dob = dob;
     }
     
-    public void setAll(String name, String email, String password, String dob){
+    public void setAll(String name, String email, String password, String dob, String customerid){
         this.name = name;
         this.email = email;
         this.password = password;
         this.dob = dob;
+        this.customerid = customerid;
     }
 }

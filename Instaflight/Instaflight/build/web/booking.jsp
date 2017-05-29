@@ -4,6 +4,9 @@
     Author     : Gianni
 --%>
 
+<%@page import="uts.wsd.User"%>
+<%@page import="java.lang.String"%>
+<%@page import="uts.wsd.Users"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="uts.wsd.Booking"%>
 <%@page import="uts.wsd.Airline"%>
@@ -17,29 +20,30 @@
     </head>
     <body>
         <%
-            String name = request.getParameter("name");
-            String email = request.getParameter("email");
             String idStr = request.getParameter("id");
             int id = Integer.valueOf(idStr);
             
             session.setAttribute("Referer", request.getHeader("Referer"));
         %>
-
+       
         <% String filePath = application.getRealPath("WEB-INF/bookings.xml");%>
         <jsp:useBean id="bookingApp" class="uts.wsd.bookingApplication" scope="application">
             <jsp:setProperty name="bookingApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
         <%
-            Bookings bookings = bookingApp.getBookings();
-            Booking booking = bookings.getBookingbyID(id);
-            
+            Bookings bookings = bookingApp.getBookings();           
+            User user = (User) session.getAttribute("user");
+            String custID = user.getCustomerid();
+            int customerID = Integer.valueOf(custID);
+            Booking booking = bookings.getBookingbyID(customerID);
+                    
             if(booking != null) {
         %>
         
         <h1>Booking</h1>
         <p>Name: <%= booking.getName() %></p>
         <p>Email: <%= booking.getEmail() %></p>
-        <p>CustomerID: <%= booking.getCustID() %></p>
+        <p>CustomerID: <%= user.getCustomerid() %></p>
         <p>FlightID: <%= id %></p>
         
         <%
@@ -59,6 +63,10 @@
             <%=airline.getFlightbyID(id).getPrice()%> 
             <%=airline.getFlightbyID(id).getType()%> 
             <%=airline.getFlightbyID(id).getSeat()%>
+            <%= user.getCustomerid() %>
+
         </p>
+        <% } %>
+        <%= booking %>
     </body>
 </html>
