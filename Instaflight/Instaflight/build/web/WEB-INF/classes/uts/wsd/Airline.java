@@ -66,7 +66,7 @@ public class Airline {
         List<Flight> tempFlights = new ArrayList<Flight>();
         for (int i = 0; i < flights.size(); i++) {
             Flight flight = getFlightbyID(i);
-            if (flight.getType().equals(type)) {
+            if (flight.getType() == type) {
                 tempFlights.add(flight);
             }
         }
