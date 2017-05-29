@@ -5,6 +5,7 @@
         <email>admin@gmail.com</email>
         <password>admin</password>
         <dob>1200-03-21</dob>
+        <customerid>0</customerid>
     </user>
     <user>
         <name>Jun Ou</name>
@@ -33,68 +34,5 @@
         <password>123</password>
         <dob>3321-12-21</dob>
         <customerid>4</customerid>
-    </user>
-    <user>
-        <name>retrnyh</name>
-        <email>retrnh</email>
-        <password>rgetrnyh</password>
-        <dob></dob>
-        <customerid>1686160147</customerid>
-    </user>
-    <user>
-        <name>rtrjymtj</name>
-        <email>erwjytm</email>
-        <password>thrytmj </password>
-        <dob></dob>
-        <customerid>1358467835</customerid>
-    </user>
-    <user>
-        <name>rgethrny</name>
-        <email>grehtryn</email>
-        <password>tnyth</password>
-        <dob></dob>
-        <customerid>1813154596</customerid>
-    </user>
-    <user>
-        <name>tnyhg</name>
-        <email>rebtrn</email>
-        <password>bgnfhgj m</password>
-        <dob></dob>
-        <customerid>529714544</customerid>
-    </user>
-    <user>
-        <name>dgnfhmg</name>
-        <email>dvfbgnf</email>
-        <password>bgnfhg</password>
-        <dob></dob>
-        <customerid>561039071</customerid>
-    </user>
-    <user>
-        <name>rgsdthgr</name>
-        <email>ergtd</email>
-        <password>dthfn</password>
-        <dob></dob>
-        <customerid>782777916</customerid>
-    </user>
-    <user>
-        <name>tdnfb</name>
-        <email>ghhn</email>
-        <password>dgnfhg</password>
-        <dob>2017-05-11</dob>
-        <customerid>791804692</customerid>
-    </user>
-    <user>
-        <name>gethrn</name>
-        <email>efgrsethr</email>
-        <password>rtnyh</password>
-        <dob></dob>
-        <customerid>1221878492</customerid>
-    </user>
-    <user>
-        <name>tdnyh</name>
-        <email>rehtfyn</email>
-        <password>bfnhg</password>
-        <dob></dob>
-        <customerid>1410579719</customerid>
     </user>
 </users>
