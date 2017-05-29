@@ -191,9 +191,17 @@
             <td>
                 <xsl:value-of select="@seat"/>
             </td>
-            <td>
-                <a href="booking.jsp?id={@id}">View</a>
-            </td>
+            <xsl:apply-templates/>
         </tr>
+    </xsl:template>
+    <xsl:template match="unavailable">
+        <td>
+            Unavailable
+        </td>
+    </xsl:template>
+    <xsl:template match="available">
+        <td>
+            <a href="booking.jsp?id={@id}">View</a>
+        </td>
     </xsl:template>
 </xsl:stylesheet>
